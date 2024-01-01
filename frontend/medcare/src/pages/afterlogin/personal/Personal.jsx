@@ -127,6 +127,9 @@ const Personal = () => {
         >
           <CardThree />
         </Grid>
+        <Grid xs={10} sx={{ backgroundColor: "red" }}>
+          s
+        </Grid>
       </Grid>
     </Box>
   )
