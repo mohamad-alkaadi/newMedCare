@@ -4,12 +4,15 @@ import PrimaryAppBar from "../components/PrimaryAppBar"
 import hello from "../../../assets/temp.jpg"
 import CardTwo from "./components/CardTwo"
 import CardThree from "./components/CardThree"
+import CardFour from "./components/CardFour"
+import CardOne from "./components/CardOne"
 const Personal = () => {
   return (
     <Box sx={{ backgroundColor: "#f2f5f9", pb: 5 }}>
       <PrimaryAppBar />
       <Grid container columns={15} sx={{ pt: 2, p: 2 }}>
-        <Grid item xs={10}>
+        <CardOne />
+        {/* <Grid item xs={10}>
           <Grid container columns={11} sx={{ pr: 2 }}>
             <Grid
               sx={{
@@ -114,7 +117,7 @@ const Personal = () => {
               <CardTwo />
             </Grid>
           </Grid>
-        </Grid>
+        </Grid> */}
         <Grid
           item
           xs={5}
@@ -127,8 +130,8 @@ const Personal = () => {
         >
           <CardThree />
         </Grid>
-        <Grid xs={10} sx={{ backgroundColor: "red" }}>
-          s
+        <Grid xs={10}>
+          <CardFour />
         </Grid>
       </Grid>
     </Box>

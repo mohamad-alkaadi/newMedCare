@@ -14,7 +14,7 @@ import React from "react"
 
 const CardThree = () => {
   return (
-    <Grid columns={8}>
+    <Grid container columns={8}>
       <Grid
         item
         xs={8}
@@ -39,7 +39,9 @@ const CardThree = () => {
           </Grid> */}
         </Grid>
       </Grid>
-      <Grid item>
+      <Grid item xs={8}>
+        {" "}
+        {/* some problem might be here becouse we are not setting how many columns we need */}
         <Grid container columns={3}>
           <Grid
             item
@@ -51,12 +53,16 @@ const CardThree = () => {
             }}
           >
             <form className="flex flex-col">
-              <textarea className="focus:outline-0 bg-[#f2f5f9] w-[535px] h-[190px]" />
+              <Box className="w-[535px] h-[190px] bg-[#f2f5f9] grid justify-center items-center">
+                <textarea
+                  placeholder="enter your first note"
+                  className="focus:outline-0 bg-[#f2f5f9] w-[525px] h-[180px]"
+                />
+              </Box>
               <Box
                 sx={{
                   backgroundColor: "#f2f5f9",
-                  // display: "grid",
-                  // justifyContent: "end",
+
                   display: "flex",
                   justifyContent: "space-between",
                 }}
@@ -70,15 +76,15 @@ const CardThree = () => {
               </Box>
             </form>
           </Grid>
-          <Grid item xs={3}>
-            <Box sx={{ ml: 4, mr: 4, mt: 2 }}>
-              <Grid container justifyContent="space-between">
-                <Typography>Latest update</Typography>
-                <Typography>2022 Nov</Typography>
-              </Grid>
-            </Box>
-          </Grid>
         </Grid>
+      </Grid>
+      <Grid item xs={8}>
+        <Box sx={{ ml: 4, mr: 4, mt: 2 }}>
+          <Grid container justifyContent="space-between">
+            <Typography>Latest update</Typography>
+            <Typography>2022 Nov</Typography>
+          </Grid>
+        </Box>
       </Grid>
     </Grid>
   )

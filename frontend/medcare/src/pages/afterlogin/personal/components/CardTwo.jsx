@@ -83,7 +83,7 @@ const CardTwo = () => {
         </Typography>
       </Grid>
       <Grid item xs={2}>
-        <Typography sx={{ width: "200px", pt: 4 }}>Allergy</Typography>
+        <Typography sx={{ width: "200px", pt: 4 }}>Allergies</Typography>
         <Typography
           sx={{
             width: "200px",
@@ -92,7 +92,8 @@ const CardTwo = () => {
             pt: "1px",
           }}
         >
-          Banana
+          Yes
+          {/* if yes make it a link that open a prompt that tels you what is the allergies */}
         </Typography>
       </Grid>
       <Grid item xs={2}>
