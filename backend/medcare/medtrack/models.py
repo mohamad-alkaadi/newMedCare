@@ -43,6 +43,14 @@ class Patient(models.Model):
     def __str__(self):
         return self.first_name
 
+class Documents(models.Model):
+    patient = models.ForeignKey(Patient, on_delete= models.CASCADE, null=True)
+    doctor = models.ForeignKey(Doctor, on_delete= models.CASCADE, null=True)
+    pdf_file = models.FileField(upload_to = 'pdfs/')
+    def __str__(self):
+        return self.name
+
+
 class Appointment(models.Model):
     APPOINTMENT_CHOICES = [
         ('checkup', 'Checkup'),

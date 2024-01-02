@@ -17,3 +17,6 @@ class PatientViewSet(viewsets.ModelViewSet):
         if sex:
             queryset = queryset.filter(sex=sex)
         return queryset
+
+# class DocumentViewSet(viewsets.ModelViewSet):
+    

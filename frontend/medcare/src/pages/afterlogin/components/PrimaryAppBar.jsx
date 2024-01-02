@@ -34,6 +34,7 @@ const PrimaryAppBar = ({ activePage }) => {
           </Box>
           <Box>
             <IconButton onClick={() => setMenuOpen(true)}>
+              {/* use MUI Popover for the dot for notfication  */}
               <NotificationsIcon sx={{ fontSize: 30 }} />
             </IconButton>
             <Menu

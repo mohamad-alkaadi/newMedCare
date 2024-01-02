@@ -53,7 +53,7 @@ const CardThree = () => {
             }}
           >
             <form className="flex flex-col">
-              <Box className="w-[535px] h-[190px] bg-[#f2f5f9] grid justify-center items-center">
+              <Box className="w-[535px] h-[200px] bg-[#f2f5f9] grid justify-center items-center">
                 <textarea
                   placeholder="enter your first note"
                   className="focus:outline-0 bg-[#f2f5f9] w-[525px] h-[180px]"
