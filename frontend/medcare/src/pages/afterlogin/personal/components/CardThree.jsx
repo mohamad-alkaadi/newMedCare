@@ -62,17 +62,17 @@ const CardThree = () => {
               <Box
                 sx={{
                   backgroundColor: "#f2f5f9",
-
                   display: "flex",
-                  justifyContent: "space-between",
+                  justifyContent: "end",
+                  pr: 1,
                 }}
               >
                 <Button variant="contained" sx={{ ml: 3, mb: 2 }}>
                   Save Notes
                 </Button>
-                <Button variant="contained" sx={{ mr: 3, mb: 2 }}>
+                {/* <Button variant="contained" sx={{ mr: 3, mb: 2 }}>
                   Delete Notes
-                </Button>
+                </Button> */}
               </Box>
             </form>
           </Grid>

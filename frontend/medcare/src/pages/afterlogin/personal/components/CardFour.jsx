@@ -303,18 +303,6 @@ const CardFour = () => {
                 </Grid>
               </Grid>
             </ListItem>
-
-            <ListItem>1</ListItem>
-            <ListItem>1</ListItem>
-            <ListItem>1</ListItem>
-            <ListItem>1</ListItem>
-            <ListItem>1</ListItem>
-            <ListItem>1</ListItem>
-            <ListItem>1</ListItem>
-            <ListItem>1</ListItem>
-            <ListItem>1</ListItem>
-            <ListItem>1</ListItem>
-            <ListItem>1</ListItem>
           </List>
         </Box>
       </Grid>

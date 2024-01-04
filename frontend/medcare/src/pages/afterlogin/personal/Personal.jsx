@@ -1,5 +1,5 @@
 import { Avatar, Box, Button, Grid, Typography } from "@mui/material"
-import React from "react"
+import React, { useState } from "react"
 import PrimaryAppBar from "../components/PrimaryAppBar"
 import hello from "../../../assets/temp.jpg"
 import CardTwo from "./components/CardTwo"
@@ -8,9 +8,11 @@ import CardFour from "./components/CardFour"
 import CardOne from "./components/CardOne"
 import CardFive from "./components/CardFive"
 const Personal = () => {
+  const [activePage, setActivePage] = useState("Personal Details")
+
   return (
     <Box sx={{ backgroundColor: "#f2f5f9", pb: 5 }}>
-      <PrimaryAppBar />
+      <PrimaryAppBar activePage={activePage} setActivePage={setActivePage} />
       <Grid container columns={15} sx={{ pt: 2, p: 2 }}>
         <CardOne />
         <Grid
@@ -37,7 +39,7 @@ const Personal = () => {
         >
           <CardFour />
         </Grid>
-        <Grid xs={5} sx={{ backgroundColor: "white", mt: 2 }}>
+        <Grid xs={5} sx={{ backgroundColor: "white", mt: 2, borderRadius: 2 }}>
           <CardFive />
         </Grid>
       </Grid>

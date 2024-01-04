@@ -29,12 +29,11 @@ const PrimaryAppBar = ({ activePage }) => {
         <Toolbar>
           <Box sx={{ textDecoration: "none", flexGrow: 1 }}>
             <Typography sx={{ color: "black", fontSize: 19 }}>
-              Personal Details
+              {activePage}
             </Typography>
           </Box>
           <Box>
             <IconButton onClick={() => setMenuOpen(true)}>
-              {/* use MUI Popover for the dot for notfication  */}
               <NotificationsIcon sx={{ fontSize: 30 }} />
             </IconButton>
             <Menu
