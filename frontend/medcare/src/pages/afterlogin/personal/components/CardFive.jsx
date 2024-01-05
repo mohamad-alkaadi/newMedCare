@@ -25,7 +25,7 @@ const CardFive = () => {
           Add Files
         </Button>
       </Grid>
-      <Grid item={8}>
+      <Grid item xs={8}>
         <List>
           <ListItem></ListItem>
         </List>

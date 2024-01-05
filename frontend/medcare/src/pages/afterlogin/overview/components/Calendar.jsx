@@ -5,19 +5,27 @@ import CalendarCard from "./CalendarCard"
 
 const Calendar = () => {
   return (
-    <div className="pt-3 pr-3">
-      <CalendarAppBar />
+    <Box sx={{ pt: 2, pr: 2, mb: 4 }}>
       <Box
         sx={{
-          backgroundColor: "white",
-          borderLeft: "1px solid #e6e6e6",
-          height: "707px",
-          overflow: "auto",
+          boxShadow: "0px 3px 15px rgba(0, 0, 0, 0.2)",
+          borderRadius: "6px 6px 6px 6px",
         }}
       >
-        <CalendarCard />
+        <CalendarAppBar />
+        <Box
+          sx={{
+            backgroundColor: "white",
+            borderLeft: "1px solid #e6e6e6",
+            height: "750px",
+            overflow: "auto",
+            borderRadius: "0 0 6px 6px",
+          }}
+        >
+          <CalendarCard />
+        </Box>
       </Box>
-    </div>
+    </Box>
   )
 }
 

@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from datetime import date
+
 # Create your models here.
 
 class Doctor(models.Model):
@@ -26,16 +27,26 @@ class Patient(models.Model):
         ('male','male'),
         ('female','female'),
     ]
+    SUBSCRIPTION_PLANS = [
+        ("basic", "basic"),
+        ("standard", "standard"),
+        ("premium", "premium"),
+    ]
 
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
+    email = models.EmailField(default='')
+    phone_number = models.CharField(max_length=50, default='')
     blood_type = models.CharField(max_length=10, choices=BLOOD_TYPES)
     sex= models.CharField(max_length = 10, choices=SEX)
-    height = models.FloatField()
+    height = models.IntegerField()
     weight = models.FloatField()
     allergies_exist = models.BooleanField()
     allergies = models.TextField()
     date_of_birth = models.DateField()
+    registered_date = models.DateField(auto_now_add=True)
+    sub_plans= models.CharField(max_length = 10, choices=SUBSCRIPTION_PLANS)
+
 
     def age(self):
         today = date.today()

@@ -168,7 +168,7 @@ const PrimaryDrawer = () => {
                 }}
               >
                 Mohamad Alkaadi
-                <Typography sx={{ fontSize: 12 }}>Patient</Typography>
+                <span className="text-[12px]">Patient</span>
               </Typography>
               <ArrowForwardIosOutlinedIcon sx={{ width: 12, ml: 2 }} />
             </Box>

@@ -8,10 +8,19 @@ import {
   ListItem,
   Typography,
 } from "@mui/material"
+import { format } from "date-fns"
 import React, { useState } from "react"
 import TextSnippetOutlinedIcon from "@mui/icons-material/TextSnippetOutlined"
-const CardFour = () => {
+const CardFour = ({ info }) => {
   const [buttonOneActive, setButtonOneActive] = useState(true)
+
+  const formattedDate = (apidate) => {
+    const date = new Date(apidate)
+    const options = { year: "2-digit", month: "short", day: "numeric" }
+    const formattedDate = date.toLocaleDateString(undefined, options)
+    return formattedDate
+  }
+
   return (
     <Grid
       container
@@ -21,6 +30,7 @@ const CardFour = () => {
         backgroundColor: "white",
         border: "1px solid #e6e6e6",
         borderRadius: 2,
+        boxShadow: "0px 3px 15px rgba(0, 0, 0, 0.2)",
       }}
     >
       <Grid item xs={12}>
@@ -29,7 +39,6 @@ const CardFour = () => {
             backgroundColor: "#eff1f7",
             p: "4px",
             m: 3,
-
             borderRadius: 2,
             width: "447px",
           }}
@@ -90,8 +99,8 @@ const CardFour = () => {
                     alignItems: "center",
                   }}
                 >
-                  <div class="m-12 h-[150px] w-1 bg-blue-400 absolute overflow-x-visible">
-                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 bg-[#eff1f7] border-green-400"></div>
+                  <div className="m-12 h-[150px] w-1 bg-blue-400 absolute overflow-x-visible">
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 bg-[#eff1f7] border-green-400"></div>
                   </div>
                 </Grid>
                 <Grid item xs={11} sx={{ backgroundColor: "white" }}>
@@ -112,7 +121,7 @@ const CardFour = () => {
                           fontSize: "23px",
                         }}
                       >
-                        26 Nov 19
+                        {formattedDate(info.date_of_birth)}
                       </Typography>
                       <Typography
                         sx={{
@@ -202,8 +211,8 @@ const CardFour = () => {
                     alignItems: "center",
                   }}
                 >
-                  <div class="m-12 h-[150px] w-1 bg-blue-400 absolute overflow-x-visible">
-                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 bg-[#eff1f7] border-green-400"></div>
+                  <div className="m-12 h-[150px] w-1 bg-blue-400 absolute overflow-x-visible">
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 bg-[#eff1f7] border-green-400"></div>
                   </div>
                 </Grid>
                 <Grid item xs={11} sx={{ backgroundColor: "white" }}>

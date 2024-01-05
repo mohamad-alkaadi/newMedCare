@@ -3,7 +3,7 @@ import React from "react"
 import CardTwo from "./CardTwo"
 import hello from "../../../../assets/temp.jpg"
 
-const CardOne = () => {
+const CardOne = ({ info }) => {
   return (
     <Grid item xs={10}>
       <Grid container columns={11} sx={{ pr: 2 }}>
@@ -13,6 +13,7 @@ const CardOne = () => {
             pb: 2,
             borderRadius: 2,
             backgroundColor: "white",
+            boxShadow: "0px 3px 15px rgba(0, 0, 0, 0.2)",
           }}
           item
           xs={3}
@@ -51,7 +52,7 @@ const CardOne = () => {
                   fontWeight: 600,
                 }}
               >
-                Mohamad ALkaadi
+                {info.first_name} {info.last_name}
               </Typography>
 
               <Typography
@@ -63,7 +64,7 @@ const CardOne = () => {
                   borderBottom: "1px solid #e6e6e6",
                 }}
               >
-                mohamadalkaadi@gmail.com
+                {info.email}
               </Typography>
             </Grid>
             <Grid item xs={6}>
@@ -105,9 +106,10 @@ const CardOne = () => {
             pb: 2,
             borderRadius: 2,
             backgroundColor: "white",
+            boxShadow: "0px 3px 15px rgba(0, 0, 0, 0.2)",
           }}
         >
-          <CardTwo />
+          <CardTwo info={info} />
         </Grid>
       </Grid>
     </Grid>

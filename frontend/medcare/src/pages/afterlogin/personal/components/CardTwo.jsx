@@ -1,7 +1,12 @@
 import { Grid, Typography } from "@mui/material"
 import React from "react"
-
-const CardTwo = () => {
+function capitalizeFirstLetter(str) {
+  if (str === undefined) {
+    return ""
+  }
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+const CardTwo = ({ info }) => {
   return (
     <Grid container columns={6} sx={{ pl: 4, pr: 4, pt: 7 }}>
       <Grid item xs={2}>
@@ -14,7 +19,7 @@ const CardTwo = () => {
             pt: "1px",
           }}
         >
-          Male
+          {capitalizeFirstLetter(info.sex)}
         </Typography>
       </Grid>
       <Grid item xs={2}>
@@ -27,7 +32,7 @@ const CardTwo = () => {
             pt: "1px",
           }}
         >
-          1998-06-20
+          {info.date_of_birth}
         </Typography>
       </Grid>
       <Grid item xs={2}>
@@ -40,7 +45,7 @@ const CardTwo = () => {
             pt: "1px",
           }}
         >
-          123-123451234
+          {info.phone_number}
         </Typography>
       </Grid>
       <Grid item xs={2}>
@@ -53,7 +58,7 @@ const CardTwo = () => {
             pt: "1px",
           }}
         >
-          A-
+          {info.blood_type}
         </Typography>
       </Grid>
       <Grid item xs={2}>
@@ -66,7 +71,7 @@ const CardTwo = () => {
             pt: "1px",
           }}
         >
-          1,73
+          {info.height} cm
         </Typography>
       </Grid>
       <Grid item xs={2}>
@@ -79,7 +84,7 @@ const CardTwo = () => {
             pt: "1px",
           }}
         >
-          70
+          {info.weight} kg
         </Typography>
       </Grid>
       <Grid item xs={2}>
@@ -92,7 +97,7 @@ const CardTwo = () => {
             pt: "1px",
           }}
         >
-          Yes
+          {info.allergies_exist ? "Yes" : "No"}
           {/* if yes make it a link that open a prompt that tels you what is the allergies */}
         </Typography>
       </Grid>
@@ -108,7 +113,7 @@ const CardTwo = () => {
             pt: "1px",
           }}
         >
-          Standard
+          {capitalizeFirstLetter(info.sub_plans)}
         </Typography>
       </Grid>
       <Grid item xs={2}>
@@ -121,7 +126,7 @@ const CardTwo = () => {
             pt: "1px",
           }}
         >
-          2022-11-01
+          {info.registered_date}
         </Typography>
       </Grid>
     </Grid>
