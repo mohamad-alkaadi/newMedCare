@@ -14,21 +14,6 @@ const Overview = () => {
     <div>
       <Box sx={{ backgroundColor: "#f2f5f9" }}>
         <Grid container columns={12}>
-          {/* <Grid item xs={11}>
-            <Grid container columns={12}>
-              <Grid item xs={12}>
-                <Grid container columns={12}>
-                  <Grid item xs={12}>
-                    <OverviewBar />
-                  </Grid>
-                  <Grid item xs={12}></Grid>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid item xs={4}>
-            <Calendar />
-          </Grid> */}
           <Grid item xs={12}>
             <PrimaryAppBar
               activePage={activePage}

@@ -46,6 +46,7 @@ class Patient(models.Model):
     date_of_birth = models.DateField()
     registered_date = models.DateField(auto_now_add=True)
     sub_plans= models.CharField(max_length = 10, choices=SUBSCRIPTION_PLANS)
+    address = models.CharField(max_length =200, default="")
 
 
     def age(self):
@@ -64,18 +65,21 @@ class Documents(models.Model):
 
 class Appointment(models.Model):
     APPOINTMENT_CHOICES = [
-        ('checkup', 'Checkup'),
-        ('follow-up', 'Follow-up'),
-        ('surgery', 'Surgery'),
+        ('checkup', 'checkup'),
+        ('follow-up', 'follow-up'),
+        ('surgery', 'surgery'),
     ]
     patient = models.ForeignKey(Patient, on_delete= models.CASCADE)
     reason = models.CharField(max_length=255, null=False)
     doctor = models.ForeignKey(Doctor, on_delete= models.SET('deleted doctor'))
     description = models.TextField()
     medicine_prescribed= models.TextField()
-    date = models.DateTimeField(default=timezone.now)
+    date = models.DateField(default=timezone.now)
+    time = models.TimeField(default=timezone.now)
     need_surgery = models.BooleanField()
     appointment_type = models.CharField(max_length=20, choices=APPOINTMENT_CHOICES)
+    upcoming = models.BooleanField()
+    notes = models.TextField()
     # checkup /  follow-up / surgery
     def __str__(self):
         return self.reason

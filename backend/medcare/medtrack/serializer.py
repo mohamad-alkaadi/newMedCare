@@ -10,3 +10,16 @@ class DocumentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Documents
         fields = "__all__"
+
+class DoctorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Doctor
+        fields= '__all__'
+class AppointmentSerializer(serializers.ModelSerializer):
+    doctor = DoctorSerializer()
+
+    class Meta:
+        model = Appointment
+        fields = '__all__'
+
+

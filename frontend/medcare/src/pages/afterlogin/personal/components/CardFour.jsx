@@ -9,10 +9,35 @@ import {
   Typography,
 } from "@mui/material"
 import { format } from "date-fns"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import TextSnippetOutlinedIcon from "@mui/icons-material/TextSnippetOutlined"
+import axios from "axios"
 const CardFour = ({ info }) => {
   const [buttonOneActive, setButtonOneActive] = useState(true)
+  const [appointmentsUpcoming, setAppointmentsUpcoming] = useState("")
+  const [appointmentsPast, setAppointmentsPast] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
+
+  const fetchData = async () => {
+    setIsLoading(true)
+    try {
+      const responseUpcoming = await axios.get(
+        "http://127.0.0.1:8000/api/appointment/?patient=1&upcoming=True"
+      )
+      const responsePast = await axios.get(
+        "http://127.0.0.1:8000/api/appointment/?patient=1&upcoming=False"
+      )
+      setAppointmentsUpcoming(responseUpcoming.data)
+      setAppointmentsPast(responsePast.data)
+      setIsLoading(false)
+    } catch (error) {
+      console.error(error)
+      setIsLoading(false)
+    }
+  }
+  useEffect(() => {
+    fetchData()
+  }, [])
 
   const formattedDate = (apidate) => {
     const date = new Date(apidate)
@@ -88,230 +113,245 @@ const CardFour = ({ info }) => {
           }}
         >
           <List>
-            <ListItem>
-              <Grid container columns={12} sx={{ mr: 2 }}>
-                <Grid
-                  item
-                  xs={1}
-                  sx={{
-                    display: "grid",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <div className="m-12 h-[150px] w-1 bg-blue-400 absolute overflow-x-visible">
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 bg-[#eff1f7] border-green-400"></div>
-                  </div>
-                </Grid>
-                <Grid item xs={11} sx={{ backgroundColor: "white" }}>
-                  <Grid container columns={12}>
+            {isLoading ? (
+              <Typography>Loading...</Typography>
+            ) : buttonOneActive ? (
+              appointmentsUpcoming.length > 0 ? (
+                appointmentsUpcoming.map((data) => (
+                  <ListItem key={data.id}>
+                    <Grid container columns={12} sx={{ mr: 2 }}>
+                      <Grid
+                        item
+                        xs={1}
+                        sx={{
+                          display: "grid",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
+                      >
+                        <div className="m-12 h-[150px] w-1 bg-blue-400 absolute overflow-x-visible">
+                          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 bg-[#eff1f7] border-green-400"></div>
+                        </div>
+                      </Grid>
+                      <Grid item xs={11} sx={{ backgroundColor: "white" }}>
+                        <Grid container columns={12}>
+                          <Grid
+                            item
+                            xs={3}
+                            sx={{
+                              pl: 2,
+                              pr: 0,
+                              pt: 3,
+                              pb: 3,
+                            }}
+                          >
+                            <Typography
+                              sx={{
+                                borderRight: "1px solid #e6e6e6",
+                                fontSize: "23px",
+                              }}
+                            >
+                              {formattedDate(data.date)}
+                            </Typography>
+                            <Typography
+                              sx={{
+                                borderRight: "1px solid #e6e6e6",
+                                fontSize: "10px",
+                              }}
+                            >
+                              {data.time}
+                            </Typography>
+                          </Grid>
+                          <Grid item xs={3} sx={{ pl: 2, pr: 0, pt: 3, pb: 3 }}>
+                            <Typography
+                              sx={{
+                                borderRight: "1px solid #e6e6e6",
+                                fontSize: "10px",
+                              }}
+                            >
+                              specialization
+                            </Typography>
+                            <Typography
+                              sx={{
+                                borderRight: "1px solid #e6e6e6",
+                                fontSize: "20px",
+                              }}
+                            >
+                              {data.doctor.specialization}
+                            </Typography>
+                          </Grid>
+                          <Grid item xs={3} sx={{ pl: 2, pr: 0, pt: 3, pb: 3 }}>
+                            <Typography
+                              sx={{
+                                borderRight: "1px solid #e6e6e6",
+                                fontSize: "10px",
+                              }}
+                            >
+                              Doctor
+                            </Typography>
+                            <Typography
+                              sx={{
+                                borderRight: "1px solid #e6e6e6",
+                                fontSize: "20px",
+                              }}
+                            >
+                              {data.doctor.name}
+                            </Typography>
+                          </Grid>
+                          <Grid
+                            item
+                            xs={3}
+                            sx={{
+                              pl: 2,
+                              pr: 0,
+                              pt: 3,
+                              pb: 3,
+                              display: "grid",
+                              justifyContent: "start",
+                              alignItems: "center",
+                            }}
+                          >
+                            <Button variant="text" size="small">
+                              <Box
+                                sx={{
+                                  display: "flex",
+                                  justifyContent: "center",
+                                  alignItems: "center",
+                                }}
+                              >
+                                <TextSnippetOutlinedIcon sx={{ width: 13 }} />
+                                <Typography sx={{ pl: "2px", fontSize: 12 }}>
+                                  Notes
+                                </Typography>
+                              </Box>
+                            </Button>
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                  </ListItem>
+                ))
+              ) : (
+                <Typography>No upcoming appointments.</Typography>
+              )
+            ) : appointmentsPast.length > 0 ? (
+              appointmentsPast.map((data) => (
+                <ListItem key={data.id}>
+                  <Grid container columns={12} sx={{ mr: 2 }}>
                     <Grid
                       item
-                      xs={3}
+                      xs={1}
                       sx={{
-                        pl: 2,
-                        pr: 0,
-                        pt: 3,
-                        pb: 3,
-                      }}
-                    >
-                      <Typography
-                        sx={{
-                          borderRight: "1px solid #e6e6e6",
-                          fontSize: "23px",
-                        }}
-                      >
-                        {formattedDate(info.date_of_birth)}
-                      </Typography>
-                      <Typography
-                        sx={{
-                          borderRight: "1px solid #e6e6e6",
-                          fontSize: "10px",
-                        }}
-                      >
-                        09.00-10.00
-                      </Typography>
-                    </Grid>
-                    <Grid item xs={3} sx={{ pl: 2, pr: 0, pt: 3, pb: 3 }}>
-                      <Typography
-                        sx={{
-                          borderRight: "1px solid #e6e6e6",
-                          fontSize: "10px",
-                        }}
-                      >
-                        specialization
-                      </Typography>
-                      <Typography
-                        sx={{
-                          borderRight: "1px solid #e6e6e6",
-                          fontSize: "20px",
-                        }}
-                      >
-                        Dermatologists
-                      </Typography>
-                    </Grid>
-                    <Grid item xs={3} sx={{ pl: 2, pr: 0, pt: 3, pb: 3 }}>
-                      <Typography
-                        sx={{
-                          borderRight: "1px solid #e6e6e6",
-                          fontSize: "10px",
-                        }}
-                      >
-                        Doctor
-                      </Typography>
-                      <Typography
-                        sx={{
-                          borderRight: "1px solid #e6e6e6",
-                          fontSize: "20px",
-                        }}
-                      >
-                        Mohamad Alkaadi
-                      </Typography>
-                    </Grid>
-                    <Grid
-                      item
-                      xs={3}
-                      sx={{
-                        pl: 2,
-                        pr: 0,
-                        pt: 3,
-                        pb: 3,
                         display: "grid",
-                        justifyContent: "start",
+                        justifyContent: "center",
                         alignItems: "center",
                       }}
                     >
-                      <Button variant="text" size="small">
-                        <Box
+                      <div className="m-12 h-[150px] w-1 bg-blue-400 absolute overflow-x-visible">
+                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 bg-[#eff1f7] border-green-400"></div>
+                      </div>
+                    </Grid>
+                    <Grid item xs={11} sx={{ backgroundColor: "white" }}>
+                      <Grid container columns={12}>
+                        <Grid
+                          item
+                          xs={3}
                           sx={{
-                            display: "flex",
-                            justifyContent: "center",
+                            pl: 2,
+                            pr: 0,
+                            pt: 3,
+                            pb: 3,
+                          }}
+                        >
+                          <Typography
+                            sx={{
+                              borderRight: "1px solid #e6e6e6",
+                              fontSize: "23px",
+                            }}
+                          >
+                            {formattedDate(data.date)}
+                          </Typography>
+                          <Typography
+                            sx={{
+                              borderRight: "1px solid #e6e6e6",
+                              fontSize: "10px",
+                            }}
+                          >
+                            {data.time}
+                          </Typography>
+                        </Grid>
+                        <Grid item xs={3} sx={{ pl: 2, pr: 0, pt: 3, pb: 3 }}>
+                          <Typography
+                            sx={{
+                              borderRight: "1px solid #e6e6e6",
+                              fontSize: "10px",
+                            }}
+                          >
+                            specialization
+                          </Typography>
+                          <Typography
+                            sx={{
+                              borderRight: "1px solid #e6e6e6",
+                              fontSize: "20px",
+                            }}
+                          >
+                            {data.doctor.specialization}
+                          </Typography>
+                        </Grid>
+                        <Grid item xs={3} sx={{ pl: 2, pr: 0, pt: 3, pb: 3 }}>
+                          <Typography
+                            sx={{
+                              borderRight: "1px solid #e6e6e6",
+                              fontSize: "10px",
+                            }}
+                          >
+                            Doctor
+                          </Typography>
+                          <Typography
+                            sx={{
+                              borderRight: "1px solid #e6e6e6",
+                              fontSize: "20px",
+                            }}
+                          >
+                            {data.doctor.name}
+                          </Typography>
+                        </Grid>
+                        <Grid
+                          item
+                          xs={3}
+                          sx={{
+                            pl: 2,
+                            pr: 0,
+                            pt: 3,
+                            pb: 3,
+                            display: "grid",
+                            justifyContent: "start",
                             alignItems: "center",
                           }}
                         >
-                          <TextSnippetOutlinedIcon sx={{ width: 13 }} />
-                          <Typography sx={{ pl: "2px", fontSize: 12 }}>
-                            Notes
-                          </Typography>
-                        </Box>
-                      </Button>
+                          <Button variant="text" size="small">
+                            <Box
+                              sx={{
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                              }}
+                            >
+                              <TextSnippetOutlinedIcon sx={{ width: 13 }} />
+                              <Typography sx={{ pl: "2px", fontSize: 12 }}>
+                                Notes
+                              </Typography>
+                            </Box>
+                          </Button>
+                        </Grid>
+                      </Grid>
                     </Grid>
                   </Grid>
-                </Grid>
-              </Grid>
-            </ListItem>
-            <ListItem>
-              <Grid container columns={12} sx={{ mr: 2 }}>
-                <Grid
-                  item
-                  xs={1}
-                  sx={{
-                    display: "grid",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <div className="m-12 h-[150px] w-1 bg-blue-400 absolute overflow-x-visible">
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 bg-[#eff1f7] border-green-400"></div>
-                  </div>
-                </Grid>
-                <Grid item xs={11} sx={{ backgroundColor: "white" }}>
-                  <Grid container columns={12}>
-                    <Grid
-                      item
-                      xs={3}
-                      sx={{
-                        pl: 2,
-                        pr: 0,
-                        pt: 3,
-                        pb: 3,
-                      }}
-                    >
-                      <Typography
-                        sx={{
-                          borderRight: "1px solid #e6e6e6",
-                          fontSize: "23px",
-                        }}
-                      >
-                        26 Dec 15
-                      </Typography>
-                      <Typography
-                        sx={{
-                          borderRight: "1px solid #e6e6e6",
-                          fontSize: "10px",
-                        }}
-                      >
-                        09.00-10.00
-                      </Typography>
-                    </Grid>
-                    <Grid item xs={3} sx={{ pl: 2, pr: 0, pt: 3, pb: 3 }}>
-                      <Typography
-                        sx={{
-                          borderRight: "1px solid #e6e6e6",
-                          fontSize: "10px",
-                        }}
-                      >
-                        specialization
-                      </Typography>
-                      <Typography
-                        sx={{
-                          borderRight: "1px solid #e6e6e6",
-                          fontSize: "20px",
-                        }}
-                      >
-                        Dermatologists
-                      </Typography>
-                    </Grid>
-                    <Grid item xs={3} sx={{ pl: 2, pr: 0, pt: 3, pb: 3 }}>
-                      <Typography
-                        sx={{
-                          borderRight: "1px solid #e6e6e6",
-                          fontSize: "10px",
-                        }}
-                      >
-                        Doctor
-                      </Typography>
-                      <Typography
-                        sx={{
-                          borderRight: "1px solid #e6e6e6",
-                          fontSize: "20px",
-                        }}
-                      >
-                        Mohamad Alkaadi
-                      </Typography>
-                    </Grid>
-                    <Grid
-                      item
-                      xs={3}
-                      sx={{
-                        pl: 2,
-                        pr: 0,
-                        pt: 3,
-                        pb: 3,
-                        display: "grid",
-                        justifyContent: "start",
-                        alignItems: "center",
-                      }}
-                    >
-                      <Button variant="text" size="small">
-                        <Box
-                          sx={{
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                          }}
-                        >
-                          <TextSnippetOutlinedIcon sx={{ width: 13 }} />
-                          <Typography sx={{ pl: "2px", fontSize: 12 }}>
-                            Notes
-                          </Typography>
-                        </Box>
-                      </Button>
-                    </Grid>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </ListItem>
+                </ListItem>
+              ))
+            ) : (
+              <Typography>No past appointments.</Typography>
+            )}
           </List>
         </Box>
       </Grid>

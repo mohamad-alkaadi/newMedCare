@@ -15,6 +15,7 @@ const Personal = () => {
   const [activePage, setActivePage] = useState("Personal Details")
 
   const fetchData = async () => {
+    setIsLoading(true)
     try {
       const response = await axios.get("http://127.0.0.1:8000/api/patient/1/")
       setInfo(response.data)
