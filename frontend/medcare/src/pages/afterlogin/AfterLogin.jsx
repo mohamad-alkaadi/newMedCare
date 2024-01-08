@@ -4,7 +4,7 @@ import PrimaryAppBar from "./components/PrimaryAppBar"
 import PrimaryDrawer from "./components/PrimaryDrawer"
 import { Grid } from "@mui/material"
 import Overview from "./overview/Overview"
-// import History from "./History/History"
+import History from "./History/History"
 
 const AfterLogin = () => {
   return (
@@ -15,9 +15,9 @@ const AfterLogin = () => {
           <PrimaryDrawer />
         </Grid>
         <Grid item xs={14}>
-          <Personal />
+          {/* <Personal /> */}
           {/* <Overview /> */}
-          {/* <History /> */}
+          <History />
         </Grid>
       </Grid>
     </div>

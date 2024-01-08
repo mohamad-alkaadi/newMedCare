@@ -66,7 +66,6 @@ class Documents(models.Model):
 class Appointment(models.Model):
     APPOINTMENT_CHOICES = [
         ('checkup', 'checkup'),
-        ('follow-up', 'follow-up'),
         ('surgery', 'surgery'),
     ]
     patient = models.ForeignKey(Patient, on_delete= models.CASCADE)
