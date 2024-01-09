@@ -15,6 +15,12 @@ const columns = [
 
 const HistoryDataGrid = () => {
   const [buttonOneActive, setButtonOneActive] = useState(true)
+
+  const [appButtonActive, setAppButtonActive] = useState(true)
+  const [surButtonActive, setSurButtonActive] = useState(false)
+  const [allButtonActive, setAllButtonActive] = useState(false)
+  const [checkUp, setCheckUp] = useState([])
+  const [surgery, setSurgery] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [rows, setRows] = useState([])
 
@@ -50,9 +56,11 @@ const HistoryDataGrid = () => {
         medicine: item.medicine_prescribed,
         notes: item.notes,
       }))
-
+      setCheckUp([...checkUpRows])
+      setSurgery([...surgeryRows])
+      setRows([...checkUpRows])
       // setRows([...checkUpRows, ...surgeryRows])
-      setRows([...checkUpRows, ...checkUpRows, ...checkUpRows, ...surgeryRows])
+      // setRows([...checkUpRows, ...checkUpRows, ...checkUpRows, ...surgeryRows])
     } catch (error) {
       console.error(error)
       setIsLoading(false)
@@ -62,6 +70,27 @@ const HistoryDataGrid = () => {
   useEffect(() => {
     fetchData()
   }, [])
+
+  const handleAppointment = () => {
+    setAppButtonActive(true)
+    setSurButtonActive(false)
+    setAllButtonActive(false)
+    setRows([])
+    setRows([...checkUp])
+  }
+  const handleSurgery = () => {
+    setAppButtonActive(false)
+    setSurButtonActive(true)
+    setAllButtonActive(false)
+    setRows([])
+    setRows([...surgery])
+  }
+  const handleAll = () => {
+    setAppButtonActive(false)
+    setSurButtonActive(false)
+    setAllButtonActive(true)
+    setRows([...checkUp, ...surgery])
+  }
 
   return (
     <>
@@ -73,35 +102,43 @@ const HistoryDataGrid = () => {
               p: "4px",
               m: 3,
               borderRadius: 2,
-              width: "447px",
+              width: "359px",
             }}
           >
             <button
               className={`pt-2 pb-2 pr-8 pl-8 mr-1 rounded-md ${
-                buttonOneActive ? `bg-[#fff] text-green-400` : null
+                appButtonActive ? `bg-[#fff] text-green-400` : null
               }`}
-              onClick={() => setButtonOneActive(true)}
+              onClick={() => handleAppointment()}
             >
               Appointments
             </button>
             <button
-              className={`pt-2 pb-2 pr-8 pl-8 rounded-md ${
-                !buttonOneActive ? `bg-[#fff] text-green-400` : null
+              className={`pt-2 pb-2 pr-8 pl-8 mr-1 rounded-md ${
+                surButtonActive ? `bg-[#fff] text-green-400` : null
               }`}
-              onClick={() => setButtonOneActive(false)}
+              onClick={() => handleSurgery()}
             >
               Surgeries
             </button>
+            <button
+              className={`pt-2 pb-2 pr-4 pl-4 rounded-md ${
+                allButtonActive ? `bg-[#fff] text-green-400` : null
+              }`}
+              onClick={() => handleAll()}
+            >
+              all
+            </button>
           </Box>
         </Grid>
-        <Grid item xs={12} sx={{ pr: 4 }}>
+        <Grid item xs={12} sx={{ pr: 2, pl: 2 }}>
           <DataGrid
             rows={rows}
             columns={columns}
             initialState={{
               pagination: {
                 paginationModel: {
-                  pageSize: 11,
+                  pageSize: 12,
                 },
               },
             }}
