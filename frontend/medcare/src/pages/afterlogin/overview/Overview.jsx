@@ -38,21 +38,12 @@ const Overview = () => {
                   >
                     <OverCardTwo />
                   </Grid>
-                  <Grid item xs={2} sx={{ backgroundColor: "lightcyan" }}>
-                    x
-                  </Grid>
                   <Grid
                     item
-                    xs={2}
-                    sx={{ backgroundColor: "lightgoldenrodyellow" }}
+                    xs={10}
+                    sx={{ backgroundColor: "lightcyan", height: 300 }}
                   >
-                    x
-                  </Grid>
-                  <Grid item xs={2} sx={{ backgroundColor: "lightblue" }}>
-                    x
-                  </Grid>
-                  <Grid item xs={2} sx={{ backgroundColor: "lightblue" }}>
-                    x
+                    x1
                   </Grid>
                 </Grid>
               </Grid>

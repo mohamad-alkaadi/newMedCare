@@ -16,8 +16,8 @@ const AfterLogin = () => {
         </Grid>
         <Grid item xs={14}>
           {/* <Personal /> */}
-          {/* <Overview /> */}
-          <History />
+          <Overview />
+          {/* <History /> */}
         </Grid>
       </Grid>
     </div>

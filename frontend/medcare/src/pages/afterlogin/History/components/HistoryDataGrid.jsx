@@ -56,6 +56,21 @@ const HistoryDataGrid = () => {
         medicine: item.medicine_prescribed,
         notes: item.notes,
       }))
+
+      // --------------------------attention ----------------------------------
+      // make it to render a button inside notes and pass it a prop of the value of item.notes
+      // const surgeryRows = surgery.data.map((item) => ({
+      //   id: item.id,
+      //   appointment: item.appointment_type,
+      //   doctor: item.doctor.name,
+      //   reason: item.reason,
+      //   description: item.description,
+      //   date: item.date,
+      //   medicine: item.medicine_prescribed,
+      //   notes: <NoteButton note={item.notes}/>,
+      // }))
+      // --------------------------attention ----------------------------------
+
       setCheckUp([...checkUpRows])
       setSurgery([...surgeryRows])
       setRows([...checkUpRows])
@@ -143,8 +158,8 @@ const HistoryDataGrid = () => {
               },
             }}
             pageSizeOptions={[5]}
-            checkboxSelection
             disableRowSelectionOnClick
+            sx={{ pl: 1 }}
           />
         </Grid>
       </Grid>
