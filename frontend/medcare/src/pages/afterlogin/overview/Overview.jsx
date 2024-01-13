@@ -32,7 +32,7 @@ const Overview = () => {
                     <OverCardTwo />
                   </Grid>
                   <Grid item xs={5}>
-                    s
+                    treatment
                   </Grid>
                   <Grid
                     item
