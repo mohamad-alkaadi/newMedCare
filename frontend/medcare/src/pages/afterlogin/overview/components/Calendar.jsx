@@ -17,7 +17,7 @@ const Calendar = () => {
           sx={{
             backgroundColor: "white",
             borderLeft: "1px solid #e6e6e6",
-            height: "750px",
+            height: "760px",
             overflow: "auto",
             borderRadius: "0 0 6px 6px",
           }}

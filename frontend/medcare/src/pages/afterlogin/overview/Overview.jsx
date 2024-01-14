@@ -8,6 +8,10 @@ import Calendar from "./components/Calendar"
 import OverCardOne from "./components/OverCardOne"
 import OverCardTwo from "./components/OverCardTwo"
 import OverCardThree from "./components/OverCardThree"
+import OverCardFour from "./components/OverCardFour"
+import OverCardFiveDouble from "./components/OverCardFiveDouble"
+import OverCardSix from "./components/OverCardSix"
+import OverCardSeven from "./components/OverCardSeven"
 const Overview = () => {
   const [activePage, setActivePage] = useState("Overview")
 
@@ -31,8 +35,15 @@ const Overview = () => {
                   <Grid item xs={5} sx={{ pt: 2, pr: 2, pb: 2 }}>
                     <OverCardTwo />
                   </Grid>
-                  <Grid item xs={5}>
-                    treatment
+                  <Grid
+                    item
+                    xs={5}
+                    sx={{
+                      pl: 2,
+                      pb: 2,
+                    }}
+                  >
+                    <OverCardFour />
                   </Grid>
                   <Grid
                     item
@@ -44,6 +55,38 @@ const Overview = () => {
                     }}
                   >
                     <OverCardThree />
+                  </Grid>
+                  <Grid
+                    item
+                    xs={5}
+                    sx={{
+                      pl: 2,
+                      pb: 2,
+                      pr: 2,
+                    }}
+                  >
+                    <OverCardFiveDouble />
+                  </Grid>
+                  <Grid
+                    item
+                    xs={5}
+                    sx={{
+                      pl: 2,
+                      pb: 2,
+                      pr: 2,
+                    }}
+                  >
+                    <OverCardSix />
+                  </Grid>
+                  <Grid
+                    item
+                    xs={5}
+                    sx={{
+                      pb: 2,
+                      pr: 2,
+                    }}
+                  >
+                    <OverCardSeven />
                   </Grid>
                 </Grid>
               </Grid>
