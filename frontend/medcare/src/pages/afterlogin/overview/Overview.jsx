@@ -12,6 +12,7 @@ import OverCardFour from "./components/OverCardFour"
 import OverCardFiveDouble from "./components/OverCardFiveDouble"
 import OverCardSix from "./components/OverCardSix"
 import OverCardSeven from "./components/OverCardSeven"
+
 const Overview = () => {
   const [activePage, setActivePage] = useState("Overview")
 
@@ -76,7 +77,7 @@ const Overview = () => {
                       pr: 2,
                     }}
                   >
-                    <OverCardSix />
+                    <OverCardSeven />
                   </Grid>
                   <Grid
                     item
@@ -86,7 +87,7 @@ const Overview = () => {
                       pr: 2,
                     }}
                   >
-                    <OverCardSeven />
+                    <OverCardSix />
                   </Grid>
                 </Grid>
               </Grid>

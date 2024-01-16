@@ -59,9 +59,7 @@ const OverCardThree = () => {
           </Box>
         </Grid>
 
-        <Grid item xs={6} sx={{ height: "100%" }}>
-          y
-        </Grid>
+        <Grid item xs={6} sx={{ height: "100%" }}></Grid>
         <Grid item xs={5} sx={{ height: "100%" }}>
           <OverCardThreeSelect />
         </Grid>
