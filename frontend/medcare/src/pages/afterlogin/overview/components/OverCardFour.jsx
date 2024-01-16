@@ -11,9 +11,61 @@ const OverCardFour = () => {
         height: 340,
       }}
     >
-      <Typography>Current prescription</Typography>
-      <List>
-        <ListItem>s</ListItem>
+      <Typography sx={{ pl: 4, pt: 2, fontSize: 30 }}>
+        Current prescription
+      </Typography>
+      <List sx={{ pl: 2, pt: 2 }}>
+        <ListItem>
+          <Box
+            sx={{
+              backgroundColor: "#c0cff5",
+              width: 20,
+              height: 20,
+              borderRadius: "100%",
+              mr: 3,
+            }}
+          ></Box>
+          <Box>
+            <Typography sx={{ fontSize: "19px" }}>Vitamin C</Typography>
+            <Typography sx={{ color: "gray", fontSize: "13px" }}>
+              5mg - 2x per day
+            </Typography>
+          </Box>
+        </ListItem>
+        <ListItem>
+          <Box
+            sx={{
+              backgroundColor: "#c0cff5",
+              width: 20,
+              height: 20,
+              borderRadius: "100%",
+              mr: 3,
+            }}
+          ></Box>
+          <Box>
+            <Typography sx={{ fontSize: "19px" }}>Vitamin C</Typography>
+            <Typography sx={{ color: "gray", fontSize: "13px" }}>
+              5mg - 2x per day
+            </Typography>
+          </Box>
+        </ListItem>
+        <ListItem>
+          <Box
+            sx={{
+              backgroundColor: "#c0cff5",
+              width: 20,
+              height: 20,
+              borderRadius: "100%",
+              mr: 3,
+            }}
+          ></Box>
+          <Box>
+            <Typography sx={{ fontSize: "19px" }}>Vitamin C</Typography>
+            <Typography sx={{ color: "gray", fontSize: "13px" }}>
+              5mg - 2x per day
+            </Typography>
+          </Box>
+        </ListItem>
       </List>
     </Box>
   )

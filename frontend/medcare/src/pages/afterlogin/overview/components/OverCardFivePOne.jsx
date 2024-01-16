@@ -10,20 +10,50 @@ const OverCardFivePOne = () => {
         borderRadius: "6px 6px 6px 6px",
         width: "395px",
         height: "144px",
+        background: "linear-gradient(to right, #9191f1, #6b6de3)",
       }}
     >
-      <Typography>Alert</Typography>
-      <Typography>You have 2 visits today:</Typography>
-      <List>
-        <ListItem sx={{ display: "flex", justifyContent: "space-between" }}>
-          <Typography>dr Anthony Wagner</Typography>
-          <Typography>dermatologist</Typography>
-        </ListItem>
-        <ListItem sx={{ display: "flex", justifyContent: "space-between" }}>
-          <Typography>dr Anthony Wagner</Typography>
-          <Typography>dermatologist</Typography>
-        </ListItem>
-      </List>
+      <Typography sx={{ pl: 3, pt: 2, color: "white" }}>Alert</Typography>
+      <Typography sx={{ pl: 3, pt: 1, color: "whitesmoke", mb: 1 }}>
+        You have 2 visits today:
+      </Typography>
+
+      <ul>
+        <li className="flex justify-between pl-6 pr-8">
+          <Typography sx={{ display: "flex", color: "white" }}>
+            <Box
+              sx={{
+                width: 7,
+                height: 7,
+                backgroundColor: "white",
+                borderRadius: "100%",
+                justifySelf: "center",
+                alignSelf: "center",
+                mr: 2,
+              }}
+            ></Box>
+            dr Anthony Wagner
+          </Typography>
+          <Typography sx={{ color: "whitesmoke" }}>dermatologist</Typography>
+        </li>
+        <li className="flex justify-between pl-6 pr-8">
+          <Typography sx={{ display: "flex", color: "white" }}>
+            <Box
+              sx={{
+                width: 7,
+                height: 7,
+                backgroundColor: "white",
+                borderRadius: "100%",
+                justifySelf: "center",
+                alignSelf: "center",
+                mr: 2,
+              }}
+            ></Box>
+            dr Anthony Wagner
+          </Typography>
+          <Typography sx={{ color: "whitesmoke" }}>dermatologist</Typography>
+        </li>
+      </ul>
     </Box>
   )
 }

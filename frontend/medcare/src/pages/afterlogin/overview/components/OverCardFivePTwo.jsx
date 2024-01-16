@@ -1,5 +1,6 @@
 import { Box, List, ListItem, Typography } from "@mui/material"
 import React from "react"
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth"
 
 const OverCardFivePTwo = () => {
   return (
@@ -11,20 +12,37 @@ const OverCardFivePTwo = () => {
         mt: 2,
         width: "395px",
         height: "144px",
+        background: "linear-gradient(to right, #f5c7c7, #fea2a3)",
       }}
     >
-      <Typography>Alert</Typography>
-      <Typography>You have 2 visits today:</Typography>
-      <List>
-        <ListItem sx={{ display: "flex", justifyContent: "space-between" }}>
-          <Typography>dr Anthony Wagner</Typography>
-          <Typography>dermatologist</Typography>
-        </ListItem>
-        <ListItem sx={{ display: "flex", justifyContent: "space-between" }}>
-          <Typography>dr Anthony Wagner</Typography>
-          <Typography>dermatologist</Typography>
-        </ListItem>
-      </List>
+      <Typography sx={{ pl: 3, pt: 2, color: "white" }}>
+        Canceld visits
+      </Typography>
+      <Typography sx={{ pl: 3, pt: 1, color: "whitesmoke", mb: 1 }}>
+        You have one canceled visit:
+      </Typography>
+      <ul>
+        <li className="pl-6">
+          <Typography sx={{ display: "flex", color: "#c67477" }}>
+            dr Anthony Wagner - dermatologist
+          </Typography>
+          <Box display="flex">
+            <CalendarMonthIcon
+              sx={{ width: "12px", mr: 1, mb: "2px", color: "white" }}
+            />
+            <Typography
+              sx={{
+                fontSize: "13px",
+                justifySelf: "center",
+                alignSelf: "center",
+                color: "white",
+              }}
+            >
+              20/07/2018
+            </Typography>
+          </Box>
+        </li>
+      </ul>
     </Box>
   )
 }

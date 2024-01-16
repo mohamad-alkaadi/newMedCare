@@ -12,6 +12,8 @@ const OverCardTwo = () => {
         pb: "28px",
         pr: 3,
         pl: 3,
+        background: "linear-gradient(to right, #fda99e, #fcb699)",
+        color: "white",
       }}
     >
       <Box sx={{ display: "flex" }}>

@@ -32,16 +32,15 @@ const OverCardOne = () => {
           pt: 3,
           pl: 0,
           pb: 3,
-          backgroundColor: "blue",
           borderRadius: "0px 6px 6px 0px",
         }}
       >
         <Grid container columns={12}>
-          <Grid item xs={12} sx={{ backgroundColor: "yellow" }}>
+          <Grid item xs={12}>
             <Typography sx={{ fontSize: 25 }}>Mohamad Alkaadi</Typography>
           </Grid>
 
-          <Grid item xs={6} sx={{ backgroundColor: "yellowgreen" }}>
+          <Grid item xs={6}>
             <Box>
               <Box sx={{ display: "flex" }}>
                 <Typography sx={{ mr: 2 }}>Birth:</Typography>
@@ -53,7 +52,7 @@ const OverCardOne = () => {
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={6} sx={{ backgroundColor: "lightcoral" }}>
+          <Grid item xs={6}>
             <Box>
               <Box sx={{ display: "flex" }}>
                 <Typography sx={{ mr: 2 }}>Birth:</Typography>
