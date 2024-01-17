@@ -13,7 +13,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle"
 import AccountBoxIcon from "@mui/icons-material/AccountBox"
 import CircleNotificationsIcon from "@mui/icons-material/CircleNotifications"
 import NotificationsIcon from "@mui/icons-material/Notifications"
-const PrimaryAppBar = ({ activePage }) => {
+const PrimaryAppBar = ({ activeBar, setActiveBar }) => {
   const [menuOpen, setMenuOpen] = useState(false)
   return (
     <>
@@ -29,7 +29,7 @@ const PrimaryAppBar = ({ activePage }) => {
         <Toolbar>
           <Box sx={{ textDecoration: "none", flexGrow: 1 }}>
             <Typography sx={{ color: "black", fontSize: 19 }}>
-              {activePage}
+              {activeBar}
             </Typography>
           </Box>
           <Box>

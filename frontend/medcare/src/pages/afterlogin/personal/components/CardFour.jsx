@@ -70,7 +70,9 @@ const CardFour = ({ info }) => {
         >
           <button
             className={`pt-2 pb-2 pr-8 pl-8 mr-1 rounded-md ${
-              buttonOneActive ? `bg-[#fff] text-green-400` : null
+              buttonOneActive
+                ? `bg-[#00544f] text-white hover:bg-[#068466]`
+                : "text-[#00544f]"
             }`}
             onClick={() => setButtonOneActive(true)}
           >
@@ -78,7 +80,9 @@ const CardFour = ({ info }) => {
           </button>
           <button
             className={`pt-2 pb-2 pr-8 pl-8 rounded-md ${
-              !buttonOneActive ? `bg-[#fff] text-green-400` : null
+              !buttonOneActive
+                ? `bg-[#00544f] text-white hover:bg-[#068466]`
+                : "text-[#00544f]"
             }`}
             onClick={() => setButtonOneActive(false)}
           >
@@ -100,7 +104,7 @@ const CardFour = ({ info }) => {
             borderBottom: "1px solid #e6e6e6",
           }}
         >
-          <Typography>Upcoming</Typography>
+          <Typography sx={{ color: "#00544f" }}>Upcoming</Typography>
         </Box>
         <Box
           sx={{
@@ -129,8 +133,8 @@ const CardFour = ({ info }) => {
                           alignItems: "center",
                         }}
                       >
-                        <div className="m-12 h-[150px] w-1 bg-blue-400 absolute overflow-x-visible">
-                          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 bg-[#eff1f7] border-green-400"></div>
+                        <div className="m-12 h-[150px] w-1 bg-[#068466] absolute overflow-x-visible">
+                          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 bg-[#eff1f7] border-[#6e7c7b]"></div>
                         </div>
                       </Grid>
                       <Grid item xs={11} sx={{ backgroundColor: "white" }}>
@@ -217,6 +221,7 @@ const CardFour = ({ info }) => {
                                   display: "flex",
                                   justifyContent: "center",
                                   alignItems: "center",
+                                  color: "#068466",
                                 }}
                               >
                                 <TextSnippetOutlinedIcon sx={{ width: 13 }} />
@@ -247,8 +252,8 @@ const CardFour = ({ info }) => {
                         alignItems: "center",
                       }}
                     >
-                      <div className="m-12 h-[150px] w-1 bg-blue-400 absolute overflow-x-visible">
-                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 bg-[#eff1f7] border-green-400"></div>
+                      <div className="m-12 h-[150px] w-1 bg-[#068466] absolute overflow-x-visible">
+                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 bg-[#eff1f7] border-[#6e7c7b]"></div>
                       </div>
                     </Grid>
                     <Grid item xs={11} sx={{ backgroundColor: "white" }}>
@@ -335,6 +340,7 @@ const CardFour = ({ info }) => {
                                 display: "flex",
                                 justifyContent: "center",
                                 alignItems: "center",
+                                color: "#068466",
                               }}
                             >
                               <TextSnippetOutlinedIcon sx={{ width: 13 }} />

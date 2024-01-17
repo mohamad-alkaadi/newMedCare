@@ -13,18 +13,17 @@ import OverCardFiveDouble from "./components/OverCardFiveDouble"
 import OverCardSix from "./components/OverCardSix"
 import OverCardSeven from "./components/OverCardSeven"
 
-const Overview = () => {
-  const [activePage, setActivePage] = useState("Overview")
+const Overview = ({ activePage, setActivePage }) => {
+  const [activeBar, setActiveBar] = useState("Overview")
+
+  setActivePage("overview")
 
   return (
     <div>
       <Box sx={{ backgroundColor: "#f2f5f9" }}>
         <Grid container columns={12}>
           <Grid item xs={12}>
-            <PrimaryAppBar
-              activePage={activePage}
-              setActivePage={setActivePage}
-            />
+            <PrimaryAppBar activeBar={activeBar} setActiveBar={setActiveBar} />
           </Grid>
           <Grid item xs={12}>
             <Grid container columns={15}>

@@ -20,8 +20,8 @@ const CardThree = () => {
         xs={8}
         // justifyContent="space-between"
         sx={{
-          pl: 4,
-          pt: 3,
+          pl: 3,
+          pt: 2,
           pb: 2,
           // display: "flex",
           // justifyContent: "space-between",
@@ -30,7 +30,9 @@ const CardThree = () => {
       >
         <Grid container columns={4}>
           <Grid item xs={2}>
-            <Typography sx={{ fontSize: "25px" }}>Notes</Typography>
+            <Typography sx={{ fontSize: "20px", color: "#003d39" }}>
+              Notes
+            </Typography>
           </Grid>
         </Grid>
       </Grid>
@@ -49,7 +51,7 @@ const CardThree = () => {
               <Box className="w-[535px] h-[200px] bg-[#f2f5f9] grid justify-center items-center">
                 <textarea
                   placeholder="Enter your first note"
-                  className="focus:outline-0 bg-[#f2f5f9] w-[476px] h-[180px]"
+                  className="focus:outline-0 bg-[#f2f5f9] w-[495px] h-[180px]"
                 />
               </Box>
               <Box

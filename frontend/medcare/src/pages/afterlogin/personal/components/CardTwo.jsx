@@ -20,7 +20,7 @@ const CardTwo = ({ info }) => {
         boxShadow: "0px 3px 15px rgba(0, 0, 0, 0.2)",
         borderRadius: 2,
         border: "1px solid #e6e6e6",
-        height: "375px",
+        height: "366px",
       }}
     >
       <Grid item xs={2}>

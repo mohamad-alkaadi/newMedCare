@@ -31,7 +31,7 @@ import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutl
 import ArrowBackIosOutlinedIcon from "@mui/icons-material/ArrowBackIosOutlined"
 import tempimg from "../../../assets/temp.jpg"
 
-const PrimaryDrawer = () => {
+const PrimaryDrawer = ({ activePage }) => {
   const [highlight, setHighlight] = useState(false)
   const [anchorEl, setAnchorEl] = React.useState(null)
   const open = Boolean(anchorEl)
@@ -66,9 +66,17 @@ const PrimaryDrawer = () => {
             />
           </ListItem>
 
-          <ListItem>
+          <ListItem
+            sx={
+              activePage === "overview"
+                ? { bgcolor: "#00544f", color: "#fff" }
+                : null
+            }
+          >
             <ListItemButton>
-              <ListItemIcon>
+              <ListItemIcon
+                sx={activePage === "overview" ? { color: "#fff" } : null}
+              >
                 {!highlight ? (
                   <SpaceDashboardOutlinedIcon />
                 ) : (
@@ -79,26 +87,50 @@ const PrimaryDrawer = () => {
             </ListItemButton>
           </ListItem>
 
-          <ListItem>
+          <ListItem
+            sx={
+              activePage === "personal"
+                ? { bgcolor: "#00544f", color: "#fff" }
+                : null
+            }
+          >
             <ListItemButton>
-              <ListItemIcon>
+              <ListItemIcon
+                sx={activePage === "personal" ? { color: "#fff" } : null}
+              >
                 {!highlight ? <PersonOutlineOutlinedIcon /> : <PersonIcon />}
               </ListItemIcon>
               <ListItemText primary="Personal Details" />
             </ListItemButton>
           </ListItem>
-          <ListItem>
+          <ListItem
+            sx={
+              activePage === "messages"
+                ? { bgcolor: "#00544f", color: "#fff" }
+                : null
+            }
+          >
             <ListItemButton>
-              <ListItemIcon>
+              <ListItemIcon
+                sx={activePage === "messages" ? { color: "#fff" } : null}
+              >
                 {!highlight ? <MessageOutlinedIcon /> : <MessageIcon />}
               </ListItemIcon>
               <ListItemText primary="Messages" />
             </ListItemButton>
           </ListItem>
 
-          <ListItem>
+          <ListItem
+            sx={
+              activePage === "history"
+                ? { bgcolor: "#00544f", color: "#fff" }
+                : null
+            }
+          >
             <ListItemButton>
-              <ListItemIcon>
+              <ListItemIcon
+                sx={activePage === "history" ? { color: "#fff" } : null}
+              >
                 {!highlight ? (
                   <LocalHospitalOutlinedIcon />
                 ) : (
@@ -110,9 +142,17 @@ const PrimaryDrawer = () => {
           </ListItem>
         </List>
         <List>
-          <ListItem>
+          <ListItem
+            sx={
+              activePage === "help"
+                ? { bgcolor: "#00544f", color: "#fff" }
+                : null
+            }
+          >
             <ListItemButton>
-              <ListItemIcon>
+              <ListItemIcon
+                sx={activePage === "help" ? { color: "#fff" } : null}
+              >
                 {!highlight ? <HelpOutlineOutlinedIcon /> : <HelpIcon />}
               </ListItemIcon>
               <ListItemText primary="Help" />

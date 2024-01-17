@@ -41,10 +41,12 @@ const CardFive = () => {
             pt: "11px",
           }}
         >
-          <Typography>Files/Documents</Typography>
+          <Typography sx={{ color: "#00544f", fontSize: "20px" }}>
+            Files/Documents
+          </Typography>
           <Button
             size="small"
-            sx={{ textTransform: "none" }}
+            sx={{ textTransform: "none", color: "#068466" }}
             startIcon={<NoteAddOutlinedIcon />}
           >
             Add Files
@@ -64,7 +66,9 @@ const CardFive = () => {
               }}
             >
               <Box display="flex">
-                <DescriptionIcon sx={{ width: 13, pb: "2px" }} />
+                <DescriptionIcon
+                  sx={{ width: 13, pb: "2px", color: "#068466" }}
+                />
                 <Typography
                   sx={{
                     ml: 1,
@@ -93,7 +97,9 @@ const CardFive = () => {
               }}
             >
               <Box display="flex">
-                <DescriptionIcon sx={{ width: 13, pb: "2px" }} />
+                <DescriptionIcon
+                  sx={{ width: 13, pb: "2px", color: "#068466" }}
+                />
                 <Typography
                   sx={{
                     ml: 1,
@@ -122,7 +128,9 @@ const CardFive = () => {
               }}
             >
               <Box display="flex">
-                <DescriptionIcon sx={{ width: 13, pb: "2px" }} />
+                <DescriptionIcon
+                  sx={{ width: 13, pb: "2px", color: "#068466" }}
+                />
                 <Typography
                   sx={{
                     ml: 1,
@@ -151,7 +159,9 @@ const CardFive = () => {
               }}
             >
               <Box display="flex">
-                <DescriptionIcon sx={{ width: 13, pb: "2px" }} />
+                <DescriptionIcon
+                  sx={{ width: 13, pb: "2px", color: "#068466" }}
+                />
                 <Typography
                   sx={{
                     ml: 1,
@@ -180,7 +190,9 @@ const CardFive = () => {
               }}
             >
               <Box display="flex">
-                <DescriptionIcon sx={{ width: 13, pb: "2px" }} />
+                <DescriptionIcon
+                  sx={{ width: 13, pb: "2px", color: "#068466" }}
+                />
                 <Typography
                   sx={{
                     ml: 1,
@@ -209,7 +221,9 @@ const CardFive = () => {
               }}
             >
               <Box display="flex">
-                <DescriptionIcon sx={{ width: 13, pb: "2px" }} />
+                <DescriptionIcon
+                  sx={{ width: 13, pb: "2px", color: "#068466" }}
+                />
                 <Typography
                   sx={{
                     ml: 1,
@@ -238,7 +252,9 @@ const CardFive = () => {
               }}
             >
               <Box display="flex">
-                <DescriptionIcon sx={{ width: 13, pb: "2px" }} />
+                <DescriptionIcon
+                  sx={{ width: 13, pb: "2px", color: "#068466" }}
+                />
                 <Typography
                   sx={{
                     ml: 1,

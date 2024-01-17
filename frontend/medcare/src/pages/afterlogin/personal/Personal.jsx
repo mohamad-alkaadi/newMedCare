@@ -9,11 +9,11 @@ import CardOne from "./components/CardOne"
 import CardFive from "./components/CardFive"
 import axios from "axios"
 
-const Personal = () => {
+const Personal = ({ activePage, setActivePage }) => {
+  const [activeBar, setActiveBar] = useState("Personal Details")
   const [info, setInfo] = useState("")
   const [isLoading, setIsLoading] = useState(false)
-  const [activePage, setActivePage] = useState("Personal Details")
-
+  setActivePage("personal")
   const fetchData = async () => {
     setIsLoading(true)
     try {
@@ -32,7 +32,7 @@ const Personal = () => {
 
   return (
     <Box sx={{ backgroundColor: "#f2f5f9", pb: 5 }}>
-      <PrimaryAppBar activePage={activePage} setActivePage={setActivePage} />
+      <PrimaryAppBar activeBar={activeBar} setActiveBar={setActiveBar} />
       <Grid container columns={15} sx={{ pt: 2, p: 2 }}>
         <Grid
           sx={{
