@@ -8,7 +8,21 @@ function capitalizeFirstLetter(str) {
 }
 const CardTwo = ({ info }) => {
   return (
-    <Grid container columns={6} sx={{ pl: 4, pr: 4, pt: 7 }}>
+    <Grid
+      container
+      columns={6}
+      sx={{
+        pl: 4,
+        pr: 4,
+        pt: 7,
+        pb: 10,
+        backgroundColor: "white",
+        boxShadow: "0px 3px 15px rgba(0, 0, 0, 0.2)",
+        borderRadius: 2,
+        border: "1px solid #e6e6e6",
+        height: "375px",
+      }}
+    >
       <Grid item xs={2}>
         <Typography sx={{ width: "200px" }}>Gender</Typography>
         <Typography

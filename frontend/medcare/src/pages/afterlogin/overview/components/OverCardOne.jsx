@@ -37,7 +37,9 @@ const OverCardOne = () => {
       >
         <Grid container columns={12}>
           <Grid item xs={12}>
-            <Typography sx={{ fontSize: 25 }}>Mohamad Alkaadi</Typography>
+            <Typography sx={{ fontSize: 25, mb: "1px" }}>
+              Mohamad Alkaadi
+            </Typography>
           </Grid>
 
           <Grid item xs={6}>

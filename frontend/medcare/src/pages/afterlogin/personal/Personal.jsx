@@ -34,7 +34,29 @@ const Personal = () => {
     <Box sx={{ backgroundColor: "#f2f5f9", pb: 5 }}>
       <PrimaryAppBar activePage={activePage} setActivePage={setActivePage} />
       <Grid container columns={15} sx={{ pt: 2, p: 2 }}>
-        <CardOne info={info} />
+        <Grid
+          sx={{
+            border: "1px solid #e6e6e6",
+            pb: 2,
+            borderRadius: 2,
+            backgroundColor: "white",
+            boxShadow: "0px 3px 15px rgba(0, 0, 0, 0.2)",
+          }}
+          item
+          xs={3}
+        >
+          <CardOne info={info} />
+        </Grid>
+        <Grid
+          item
+          xs={7}
+          sx={{
+            pr: 2,
+            pl: 2,
+          }}
+        >
+          <CardTwo info={info} />
+        </Grid>
         <Grid
           item
           xs={5}

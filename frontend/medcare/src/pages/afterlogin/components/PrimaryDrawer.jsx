@@ -30,6 +30,7 @@ import HelpIcon from "@mui/icons-material/Help"
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined"
 import ArrowBackIosOutlinedIcon from "@mui/icons-material/ArrowBackIosOutlined"
 import tempimg from "../../../assets/temp.jpg"
+
 const PrimaryDrawer = () => {
   const [highlight, setHighlight] = useState(false)
   const [anchorEl, setAnchorEl] = React.useState(null)
@@ -105,15 +106,6 @@ const PrimaryDrawer = () => {
                 )}
               </ListItemIcon>
               <ListItemText primary="Medical History" />
-            </ListItemButton>
-          </ListItem>
-
-          <ListItem>
-            <ListItemButton>
-              <ListItemIcon>
-                {!highlight ? <VaccinesOutlinedIcon /> : <VaccinesIcon />}
-              </ListItemIcon>
-              <ListItemText primary="Medication" />
             </ListItemButton>
           </ListItem>
         </List>
