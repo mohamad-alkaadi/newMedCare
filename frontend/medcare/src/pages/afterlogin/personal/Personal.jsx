@@ -38,6 +38,7 @@ const Personal = () => {
           sx={{
             border: "1px solid #e6e6e6",
             pb: 2,
+            mb: "12px",
             borderRadius: 2,
             backgroundColor: "white",
             boxShadow: "0px 3px 15px rgba(0, 0, 0, 0.2)",
@@ -76,9 +77,6 @@ const Personal = () => {
           sx={{
             pr: 2,
             pt: 1,
-            // borderRadius: 2,
-            // border: "1px solid #e6e6e6",
-            // backgroundColor: "white",
           }}
         >
           <CardFour info={info} />

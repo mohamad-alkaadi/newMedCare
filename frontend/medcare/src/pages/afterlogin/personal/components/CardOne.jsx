@@ -33,6 +33,9 @@ const CardOne = ({ info }) => {
             margin: "auto",
             fontSize: 22,
             fontWeight: 600,
+            fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
+            pb: "2px",
+            color: "#003d39",
           }}
         >
           {info.first_name} {info.last_name}
@@ -45,6 +48,7 @@ const CardOne = ({ info }) => {
             pb: 2,
             mb: 1,
             borderBottom: "1px solid #e6e6e6",
+            color: "#97a1aa",
           }}
         >
           {info.email}
@@ -60,15 +64,35 @@ const CardOne = ({ info }) => {
         >
           <Button
             variant="outlined"
-            sx={{ color: "black", border: "1px solid #e6e6e6" }}
+            sx={{
+              color: "white",
+              // border: "1px solid #e6e6e6",
+              border: "none",
+              textTransform: "none",
+              bgcolor: "#00544f",
+              "&:hover": {
+                bgcolor: "#068466",
+                border: "none",
+              },
+            }}
           >
-            Update info
+            Update Info
           </Button>
         </Grid>
         <Grid container columns={6} alignItems="center" justifyContent="center">
           <Button
             variant="outlined"
-            sx={{ color: "black", border: "1px solid #e6e6e6" }}
+            sx={{
+              color: "white",
+              // border: "1px solid #e6e6e6",
+              border: "none",
+              textTransform: "none",
+              bgcolor: "#00544f",
+              "&:hover": {
+                bgcolor: "#068466",
+                border: "none",
+              },
+            }}
           >
             Send Message
           </Button>

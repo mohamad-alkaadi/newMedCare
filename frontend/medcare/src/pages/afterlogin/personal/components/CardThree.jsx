@@ -30,18 +30,11 @@ const CardThree = () => {
       >
         <Grid container columns={4}>
           <Grid item xs={2}>
-            <Typography>Notes</Typography>
+            <Typography sx={{ fontSize: "25px" }}>Notes</Typography>
           </Grid>
-          {/* <Grid item xs={2}>
-            <Link sx={{ textDecoration: "none", backgroundColor: "red" }}>
-              <Typography>Delete all</Typography>
-            </Link>
-          </Grid> */}
         </Grid>
       </Grid>
       <Grid item xs={8}>
-        {" "}
-        {/* some problem might be here becouse we are not setting how many columns we need */}
         <Grid container columns={3}>
           <Grid
             item
@@ -55,8 +48,8 @@ const CardThree = () => {
             <form className="flex flex-col">
               <Box className="w-[535px] h-[200px] bg-[#f2f5f9] grid justify-center items-center">
                 <textarea
-                  placeholder="enter your first note"
-                  className="focus:outline-0 bg-[#f2f5f9] w-[525px] h-[180px]"
+                  placeholder="Enter your first note"
+                  className="focus:outline-0 bg-[#f2f5f9] w-[476px] h-[180px]"
                 />
               </Box>
               <Box
@@ -67,7 +60,23 @@ const CardThree = () => {
                   pr: 1,
                 }}
               >
-                <Button variant="contained" sx={{ ml: 3, mb: 2 }}>
+                <Button
+                  variant="contained"
+                  sx={{
+                    ml: 3,
+                    mb: 2,
+                    mr: 1,
+                    color: "white",
+                    // border: "1px solid #e6e6e6",
+                    border: "none",
+                    textTransform: "none",
+                    bgcolor: "#00544f",
+                    "&:hover": {
+                      bgcolor: "#068466",
+                      border: "none",
+                    },
+                  }}
+                >
                   Save Notes
                 </Button>
                 {/* <Button variant="contained" sx={{ mr: 3, mb: 2 }}>
@@ -81,8 +90,12 @@ const CardThree = () => {
       <Grid item xs={8}>
         <Box sx={{ ml: 4, mr: 4, mt: 2 }}>
           <Grid container justifyContent="space-between">
-            <Typography>Latest update</Typography>
-            <Typography>2022 Nov</Typography>
+            <Typography sx={{ fontSize: "15px", color: "#97a1aa" }}>
+              Latest update
+            </Typography>
+            <Typography sx={{ fontSize: "15px", color: "#97a1aa" }}>
+              2022 Nov '19
+            </Typography>
           </Grid>
         </Box>
       </Grid>

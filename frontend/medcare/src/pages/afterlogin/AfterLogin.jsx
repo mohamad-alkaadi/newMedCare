@@ -15,7 +15,7 @@ const AfterLogin = () => {
           <PrimaryDrawer />
         </Grid>
         <Grid item xs={14}>
-          {/* <Personal /> */}
+          <Personal />
           {/* <Overview /> */}
           {/* <History /> */}
         </Grid>

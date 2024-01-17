@@ -42,6 +42,8 @@ const CardTwo = ({ info }) => {
             pb: 2,
             pt: "3px",
             fontSize: "17px",
+            color: "#003d39",
+
             // color: "#7a7a7a",
           }}
         >
@@ -67,6 +69,7 @@ const CardTwo = ({ info }) => {
             pb: 2,
             pt: "3px",
             fontSize: "17px",
+            color: "#003d39",
           }}
         >
           {info.date_of_birth}
@@ -91,6 +94,7 @@ const CardTwo = ({ info }) => {
             pb: 2,
             pt: "3px",
             fontSize: "17px",
+            color: "#003d39",
           }}
         >
           {info.phone_number}
@@ -116,6 +120,7 @@ const CardTwo = ({ info }) => {
             pb: 2,
             pt: "3px",
             fontSize: "17px",
+            color: "#003d39",
           }}
         >
           {info.blood_type}
@@ -141,6 +146,7 @@ const CardTwo = ({ info }) => {
             pb: 2,
             pt: "3px",
             fontSize: "17px",
+            color: "#003d39",
           }}
         >
           {info.height} cm
@@ -166,6 +172,7 @@ const CardTwo = ({ info }) => {
             pb: 2,
             pt: "3px",
             fontSize: "17px",
+            color: "#003d39",
           }}
         >
           {info.weight} kg
@@ -191,6 +198,7 @@ const CardTwo = ({ info }) => {
             pb: 2,
             pt: "3px",
             fontSize: "17px",
+            color: "#003d39",
           }}
         >
           {info.allergies_exist ? "Yes" : "No"}
@@ -217,6 +225,7 @@ const CardTwo = ({ info }) => {
             pb: 2,
             pt: "3px",
             fontSize: "17px",
+            color: "#003d39",
           }}
         >
           {capitalizeFirstLetter(info.sub_plans)}
@@ -242,6 +251,7 @@ const CardTwo = ({ info }) => {
             pb: 2,
             pt: "3px",
             // fontSize: "17px",
+            color: "#003d39",
           }}
         >
           {info.registered_date}
