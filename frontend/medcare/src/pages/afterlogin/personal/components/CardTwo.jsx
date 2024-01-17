@@ -24,91 +24,173 @@ const CardTwo = ({ info }) => {
       }}
     >
       <Grid item xs={2}>
-        <Typography sx={{ width: "200px" }}>Gender</Typography>
+        <Typography
+          sx={{
+            width: "200px",
+            fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
+            fontWeight: 500,
+            color: "#97a1aa",
+            fontSize: "15px",
+          }}
+        >
+          Gender
+        </Typography>
         <Typography
           sx={{
             width: "200px",
             borderBottom: "1px solid #e6e6e6",
             pb: 2,
-            pt: "1px",
+            pt: "3px",
+            fontSize: "17px",
+            // color: "#7a7a7a",
           }}
         >
           {capitalizeFirstLetter(info.sex)}
         </Typography>
       </Grid>
       <Grid item xs={2}>
-        <Typography sx={{ width: "200px" }}>Birthday</Typography>
+        <Typography
+          sx={{
+            width: "200px",
+            fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
+            fontWeight: 500,
+            color: "#97a1aa",
+            fontSize: "15px",
+          }}
+        >
+          Birthday
+        </Typography>
         <Typography
           sx={{
             width: "200px",
             borderBottom: "1px solid #e6e6e6",
             pb: 2,
-            pt: "1px",
+            pt: "3px",
+            fontSize: "17px",
           }}
         >
           {info.date_of_birth}
         </Typography>
       </Grid>
       <Grid item xs={2}>
-        <Typography sx={{ width: "200px" }}>Phone Number</Typography>
+        <Typography
+          sx={{
+            width: "200px",
+            fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
+            fontWeight: 500,
+            color: "#97a1aa",
+            fontSize: "15px",
+          }}
+        >
+          Phone Number
+        </Typography>
         <Typography
           sx={{
             width: "200px",
             borderBottom: "1px solid #e6e6e6",
             pb: 2,
-            pt: "1px",
+            pt: "3px",
+            fontSize: "17px",
           }}
         >
           {info.phone_number}
         </Typography>
       </Grid>
       <Grid item xs={2}>
-        <Typography sx={{ width: "200px", pt: 4 }}>Blood Type</Typography>
+        <Typography
+          sx={{
+            width: "200px",
+            pt: 4,
+            fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
+            fontWeight: 500,
+            color: "#97a1aa",
+            fontSize: "15px",
+          }}
+        >
+          Blood Type
+        </Typography>
         <Typography
           sx={{
             width: "200px",
             borderBottom: "1px solid #e6e6e6",
             pb: 2,
-            pt: "1px",
+            pt: "3px",
+            fontSize: "17px",
           }}
         >
           {info.blood_type}
         </Typography>
       </Grid>
       <Grid item xs={2}>
-        <Typography sx={{ width: "200px", pt: 4 }}>Height</Typography>
+        <Typography
+          sx={{
+            width: "200px",
+            pt: 4,
+            fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
+            fontWeight: 500,
+            color: "#97a1aa",
+            fontSize: "15px",
+          }}
+        >
+          Height
+        </Typography>
         <Typography
           sx={{
             width: "200px",
             borderBottom: "1px solid #e6e6e6",
             pb: 2,
-            pt: "1px",
+            pt: "3px",
+            fontSize: "17px",
           }}
         >
           {info.height} cm
         </Typography>
       </Grid>
       <Grid item xs={2}>
-        <Typography sx={{ width: "200px", pt: 4 }}>Weight</Typography>
+        <Typography
+          sx={{
+            width: "200px",
+            pt: 4,
+            fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
+            fontWeight: 500,
+            color: "#97a1aa",
+            fontSize: "15px",
+          }}
+        >
+          Weight
+        </Typography>
         <Typography
           sx={{
             width: "200px",
             borderBottom: "1px solid #e6e6e6",
             pb: 2,
-            pt: "1px",
+            pt: "3px",
+            fontSize: "17px",
           }}
         >
           {info.weight} kg
         </Typography>
       </Grid>
       <Grid item xs={2}>
-        <Typography sx={{ width: "200px", pt: 4 }}>Allergies</Typography>
+        <Typography
+          sx={{
+            width: "200px",
+            pt: 4,
+            fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
+            fontWeight: 500,
+            color: "#97a1aa",
+            fontSize: "15px",
+          }}
+        >
+          Allergies
+        </Typography>
         <Typography
           sx={{
             width: "200px",
             borderBottom: "1px solid #e6e6e6",
             pb: 2,
-            pt: "1px",
+            pt: "3px",
+            fontSize: "17px",
           }}
         >
           {info.allergies_exist ? "Yes" : "No"}
@@ -116,7 +198,16 @@ const CardTwo = ({ info }) => {
         </Typography>
       </Grid>
       <Grid item xs={2}>
-        <Typography sx={{ width: "200px", pt: 4 }}>
+        <Typography
+          sx={{
+            width: "200px",
+            pt: 4,
+            fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
+            fontWeight: 500,
+            color: "#97a1aa",
+            fontSize: "15px",
+          }}
+        >
           Subscription Plan
         </Typography>
         <Typography
@@ -124,20 +215,33 @@ const CardTwo = ({ info }) => {
             width: "200px",
             borderBottom: "1px solid #e6e6e6",
             pb: 2,
-            pt: "1px",
+            pt: "3px",
+            fontSize: "17px",
           }}
         >
           {capitalizeFirstLetter(info.sub_plans)}
         </Typography>
       </Grid>
       <Grid item xs={2}>
-        <Typography sx={{ width: "200px", pt: 4 }}>Registered Date</Typography>
+        <Typography
+          sx={{
+            width: "200px",
+            pt: 4,
+            fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
+            fontWeight: 500,
+            color: "#97a1aa",
+            fontSize: "15px",
+          }}
+        >
+          Registered Date
+        </Typography>
         <Typography
           sx={{
             width: "200px",
             borderBottom: "1px solid #e6e6e6",
             pb: 2,
-            pt: "1px",
+            pt: "3px",
+            // fontSize: "17px",
           }}
         >
           {info.registered_date}
