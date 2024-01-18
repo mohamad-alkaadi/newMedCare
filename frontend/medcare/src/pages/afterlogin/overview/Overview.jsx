@@ -12,7 +12,6 @@ import OverCardFour from "./components/OverCardFour"
 import OverCardFiveDouble from "./components/OverCardFiveDouble"
 import OverCardSix from "./components/OverCardSix"
 import OverCardSeven from "./components/OverCardSeven"
-
 const Overview = ({ activePage, setActivePage }) => {
   const [activeBar, setActiveBar] = useState("Overview")
 

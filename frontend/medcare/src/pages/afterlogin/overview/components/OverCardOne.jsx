@@ -1,5 +1,6 @@
 import { Avatar, Box, Grid, Typography } from "@mui/material"
 import React from "react"
+import pic from "../../../../assets/temp.jpg"
 
 const OverCardOne = () => {
   return (
@@ -23,7 +24,11 @@ const OverCardOne = () => {
           pb: 3,
         }}
       >
-        <Avatar alt="intro" sx={{ width: "100px", height: "100px" }} />
+        <Avatar
+          alt="intro"
+          src={pic}
+          sx={{ width: "100px", height: "100px" }}
+        />
       </Grid>
       <Grid
         item
@@ -37,7 +42,15 @@ const OverCardOne = () => {
       >
         <Grid container columns={12}>
           <Grid item xs={12}>
-            <Typography sx={{ fontSize: 25, mb: "1px" }}>
+            <Typography
+              sx={{
+                fontSize: 25,
+                mb: "5px",
+                fontWeight: 500,
+                fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
+                color: "#013d39",
+              }}
+            >
               Mohamad Alkaadi
             </Typography>
           </Grid>
@@ -45,24 +58,98 @@ const OverCardOne = () => {
           <Grid item xs={6}>
             <Box>
               <Box sx={{ display: "flex" }}>
-                <Typography sx={{ mr: 2 }}>Birth:</Typography>
-                <Typography>30 Apr 1993 (25yo)</Typography>
+                <Typography
+                  sx={{
+                    mr: 2,
+                    fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
+                    fontWeight: 500,
+                    color: "#97a1aa",
+                    fontSize: "15px",
+                  }}
+                >
+                  Birth:
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "15px",
+                    color: "#013d39",
+                    fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
+                  }}
+                >
+                  30 Apr 1993 (25yo)
+                </Typography>
               </Box>
               <Box sx={{ display: "flex" }}>
-                <Typography sx={{ mr: 1 }}>Email:</Typography>
-                <Typography>mohamadalkaadi@gmail.com</Typography>
+                <Typography
+                  sx={{
+                    mr: 1,
+                    fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
+                    fontWeight: 500,
+                    color: "#97a1aa",
+                    fontSize: "15px",
+                  }}
+                >
+                  Email:
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "15px",
+                    color: "#013d39",
+                    ml: "3px",
+                    fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
+                  }}
+                >
+                  mohamadalkaadi@gmail.com
+                </Typography>
               </Box>
             </Box>
           </Grid>
           <Grid item xs={6}>
             <Box>
               <Box sx={{ display: "flex" }}>
-                <Typography sx={{ mr: 2 }}>Birth:</Typography>
-                <Typography>30 Apr 1993 (25yo)</Typography>
+                <Typography
+                  sx={{
+                    mr: 2,
+                    fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
+                    fontWeight: 500,
+                    color: "#97a1aa",
+                    fontSize: "15px",
+                  }}
+                >
+                  Phone:
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "15px",
+                    color: "#013d39",
+                    fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
+                  }}
+                >
+                  0912345677
+                </Typography>
               </Box>
               <Box sx={{ display: "flex" }}>
-                <Typography sx={{ mr: 1 }}>Email:</Typography>
-                <Typography>mohamadalkaadi@gmail.com</Typography>
+                <Typography
+                  sx={{
+                    mr: 1,
+                    fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
+                    fontWeight: 500,
+                    color: "#97a1aa",
+                    fontSize: "15px",
+                  }}
+                >
+                  Plan:
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "15px",
+                    color: "#013d39",
+                    ml: "21px",
+                    fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
+                  }}
+                >
+                  Basic
+                </Typography>
               </Box>
             </Box>
           </Grid>

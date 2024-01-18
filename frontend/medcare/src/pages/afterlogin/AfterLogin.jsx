@@ -17,7 +17,7 @@ const AfterLogin = () => {
           <PrimaryDrawer activePage={activePage} />
         </Grid>
         <Grid item xs={14}>
-          {/* <Personal activePage={activePage} setActivePage={setActivePage} /> */}
+          <Personal activePage={activePage} setActivePage={setActivePage} />
           <Overview activePage={activePage} setActivePage={setActivePage} />
           {/* <History activePage={activePage} setActivePage={setActivePage} /> */}
         </Grid>

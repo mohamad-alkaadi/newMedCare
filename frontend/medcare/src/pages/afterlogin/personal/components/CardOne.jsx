@@ -34,8 +34,8 @@ const CardOne = ({ info }) => {
             fontSize: 22,
             fontWeight: 600,
             fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
-            pb: "2px",
             color: "#003d39",
+            pb: "2px",
           }}
         >
           {info.first_name} {info.last_name}

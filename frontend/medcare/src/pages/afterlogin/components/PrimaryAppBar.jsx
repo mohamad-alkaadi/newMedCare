@@ -28,7 +28,13 @@ const PrimaryAppBar = ({ activeBar, setActiveBar }) => {
       >
         <Toolbar>
           <Box sx={{ textDecoration: "none", flexGrow: 1 }}>
-            <Typography sx={{ color: "black", fontSize: 19 }}>
+            <Typography
+              sx={{
+                color: "black",
+                fontSize: 22,
+                color: "#00514c",
+              }}
+            >
               {activeBar}
             </Typography>
           </Box>
