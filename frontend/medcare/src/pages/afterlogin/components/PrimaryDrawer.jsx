@@ -29,7 +29,7 @@ import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined"
 import HelpIcon from "@mui/icons-material/Help"
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined"
 import ArrowBackIosOutlinedIcon from "@mui/icons-material/ArrowBackIosOutlined"
-import tempimg from "../../../assets/temp.jpg"
+import temp from "../../../assets/temp.jpg"
 
 const PrimaryDrawer = ({ activePage }) => {
   const [highlight, setHighlight] = useState(false)
@@ -184,7 +184,7 @@ const PrimaryDrawer = ({ activePage }) => {
                 borderTop: "1px solid #e6e6e6",
               }}
             >
-              <Avatar alt="Mohamad Alkaadi" />
+              <Avatar alt="Mohamad Alkaadi" src={temp} />
               <Typography
                 sx={{
                   ml: 1,

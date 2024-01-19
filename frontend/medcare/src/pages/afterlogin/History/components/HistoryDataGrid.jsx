@@ -122,7 +122,9 @@ const HistoryDataGrid = () => {
           >
             <button
               className={`pt-2 pb-2 pr-8 pl-8 mr-1 rounded-md ${
-                appButtonActive ? `bg-[#fff] text-green-400` : null
+                appButtonActive
+                  ? `bg-[#00544f] text-white hover:bg-[#068466]`
+                  : "text-[#00544f]"
               }`}
               onClick={() => handleAppointment()}
             >
@@ -130,7 +132,9 @@ const HistoryDataGrid = () => {
             </button>
             <button
               className={`pt-2 pb-2 pr-8 pl-8 mr-1 rounded-md ${
-                surButtonActive ? `bg-[#fff] text-green-400` : null
+                surButtonActive
+                  ? `bg-[#00544f] text-white hover:bg-[#068466]`
+                  : "text-[#00544f]"
               }`}
               onClick={() => handleSurgery()}
             >
@@ -138,7 +142,9 @@ const HistoryDataGrid = () => {
             </button>
             <button
               className={`pt-2 pb-2 pr-4 pl-4 rounded-md ${
-                allButtonActive ? `bg-[#fff] text-green-400` : null
+                allButtonActive
+                  ? `bg-[#00544f] text-white hover:bg-[#068466]`
+                  : "text-[#00544f]"
               }`}
               onClick={() => handleAll()}
             >

@@ -11,14 +11,21 @@ const OverCardFour = () => {
         height: 340,
       }}
     >
-      <Typography sx={{ pl: 4, pt: 2, fontSize: 30 }}>
+      <Typography
+        sx={{
+          pl: 4,
+          pt: 2,
+          fontSize: 30,
+          color: "#00514c",
+        }}
+      >
         Current prescription
       </Typography>
       <List sx={{ pl: 2, pt: 2 }}>
         <ListItem>
           <Box
             sx={{
-              backgroundColor: "#c0cff5",
+              backgroundColor: "#068466",
               width: 20,
               height: 20,
               borderRadius: "100%",
@@ -26,8 +33,16 @@ const OverCardFour = () => {
             }}
           ></Box>
           <Box>
-            <Typography sx={{ fontSize: "19px" }}>Vitamin C</Typography>
-            <Typography sx={{ color: "gray", fontSize: "13px" }}>
+            <Typography
+              sx={{
+                fontSize: "19px",
+                fontFamily: "'Rubik', sans-serif",
+                color: "#068466",
+              }}
+            >
+              Vitamin C
+            </Typography>
+            <Typography sx={{ color: "#aaaaaa", fontSize: "12px" }}>
               5mg - 2x per day
             </Typography>
           </Box>
@@ -35,7 +50,7 @@ const OverCardFour = () => {
         <ListItem>
           <Box
             sx={{
-              backgroundColor: "#c0cff5",
+              backgroundColor: "#068466",
               width: 20,
               height: 20,
               borderRadius: "100%",
@@ -43,8 +58,16 @@ const OverCardFour = () => {
             }}
           ></Box>
           <Box>
-            <Typography sx={{ fontSize: "19px" }}>Vitamin C</Typography>
-            <Typography sx={{ color: "gray", fontSize: "13px" }}>
+            <Typography
+              sx={{
+                fontSize: "19px",
+                fontFamily: "'Rubik', sans-serif",
+                color: "#068466",
+              }}
+            >
+              Vitamin C
+            </Typography>
+            <Typography sx={{ color: "#aaaaaa", fontSize: "12px" }}>
               5mg - 2x per day
             </Typography>
           </Box>
@@ -52,7 +75,7 @@ const OverCardFour = () => {
         <ListItem>
           <Box
             sx={{
-              backgroundColor: "#c0cff5",
+              backgroundColor: "#068466",
               width: 20,
               height: 20,
               borderRadius: "100%",
@@ -60,8 +83,41 @@ const OverCardFour = () => {
             }}
           ></Box>
           <Box>
-            <Typography sx={{ fontSize: "19px" }}>Vitamin C</Typography>
-            <Typography sx={{ color: "gray", fontSize: "13px" }}>
+            <Typography
+              sx={{
+                fontSize: "19px",
+                fontFamily: "'Rubik', sans-serif",
+                color: "#068466",
+              }}
+            >
+              Vitamin C
+            </Typography>
+            <Typography sx={{ color: "#aaaaaa", fontSize: "12px" }}>
+              5mg - 2x per day
+            </Typography>
+          </Box>
+        </ListItem>
+        <ListItem>
+          <Box
+            sx={{
+              backgroundColor: "#068466",
+              width: 20,
+              height: 20,
+              borderRadius: "100%",
+              mr: 3,
+            }}
+          ></Box>
+          <Box>
+            <Typography
+              sx={{
+                fontSize: "19px",
+                fontFamily: "'Rubik', sans-serif",
+                color: "#068466",
+              }}
+            >
+              Vitamin C
+            </Typography>
+            <Typography sx={{ color: "#aaaaaa", fontSize: "12px" }}>
               5mg - 2x per day
             </Typography>
           </Box>

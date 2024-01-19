@@ -42,17 +42,27 @@ const OverCardThreeSelect = () => {
             pb: 2,
           }}
         >
-          <Typography sx={{ mb: 1, fontSize: 20, fontWeight: 600 }}>
+          <Typography
+            sx={{
+              mb: 1,
+              fontSize: 20,
+              fontWeight: 600,
+              color: "#00524d",
+              fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
+            }}
+          >
             Search a hospital
           </Typography>
           <FormControl sx={{ width: 230 }}>
             <InputLabel id="demo-simple-select-label">Rating</InputLabel>
             <Select
+              color="success"
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               value={age}
               label="Age"
               onChange={handleChange}
+              sx={{ boxShadow: "0px 3px 15px rgba(0, 0, 0, 0.2)", mb: "3px" }}
             >
               <MenuItem value={10}>1 star</MenuItem>
               <MenuItem value={20}>2 star</MenuItem>
@@ -64,11 +74,16 @@ const OverCardThreeSelect = () => {
           <FormControl fullWidth>
             <InputLabel id="specialization">Specialization</InputLabel>
             <Select
+              color="success"
               labelId="specialization"
               id="specialization"
               value={specialization}
               label="Specialization"
               onChange={handleSpecializationChange}
+              sx={{
+                boxShadow: "0px 3px 15px rgba(0, 0, 0, 0.2)",
+                mb: "3px",
+              }}
             >
               <MenuItem value={10}>General</MenuItem>
               <MenuItem value={20}>Eye</MenuItem>
@@ -80,16 +95,30 @@ const OverCardThreeSelect = () => {
             <InputLabel id="demo">Hospital type</InputLabel>
             <Select
               labelId="demo"
+              color="success"
               id="demo"
               value={specialization}
               label="Specialization"
               onChange={handleSpecializationChange}
+              sx={{
+                boxShadow: "0px 3px 15px rgba(0, 0, 0, 0.2)",
+                mb: "3px",
+              }}
             >
               <MenuItem value={10}>Public</MenuItem>
               <MenuItem value={20}>Private</MenuItem>
             </Select>
           </FormControl>
-          <Button type="submit" variant="contained" color="primary">
+          <Button
+            type="submit"
+            variant="contained"
+            sx={{
+              bgcolor: "#00524d",
+              "&:hover": {
+                bgcolor: "#068466",
+              },
+            }}
+          >
             Search
           </Button>
         </Box>

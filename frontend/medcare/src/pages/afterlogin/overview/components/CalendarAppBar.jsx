@@ -25,8 +25,8 @@ const CalendarAppBar = () => {
         }}
       >
         <Toolbar>
-          <Box sx={{ textDecoration: "none", flexGrow: 1 }}>
-            <Typography sx={{ color: "black", fontSize: 19 }}>
+          <Box sx={{ textDecoration: "none" }}>
+            <Typography sx={{ color: "#00544f", fontSize: "20px" }}>
               Calendar
             </Typography>
           </Box>

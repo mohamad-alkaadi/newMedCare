@@ -10,7 +10,11 @@ const OverCardSeven = () => {
         height: 304,
       }}
     >
-      <Typography sx={{ fontSize: 30 }}>current doctors</Typography>
+      <Typography
+        sx={{ color: "#00544f", fontSize: "20px", pl: 3, pt: "11px" }}
+      >
+        Current doctors
+      </Typography>
     </Box>
   )
 }

@@ -48,10 +48,12 @@ const OverCardSix = () => {
             pt: "11px",
           }}
         >
-          <Typography>Files/Documents</Typography>
+          <Typography sx={{ color: "#00544f", fontSize: "20px" }}>
+            Files/Documents
+          </Typography>
           <Button
             size="small"
-            sx={{ textTransform: "none" }}
+            sx={{ textTransform: "none", color: "#068466" }}
             startIcon={<NoteAddOutlinedIcon />}
           >
             Add Files
@@ -71,7 +73,9 @@ const OverCardSix = () => {
               }}
             >
               <Box display="flex">
-                <DescriptionIcon sx={{ width: 13, pb: "2px" }} />
+                <DescriptionIcon
+                  sx={{ width: 13, pb: "2px", color: "#068466" }}
+                />
                 <Typography
                   sx={{
                     ml: 1,
@@ -100,7 +104,9 @@ const OverCardSix = () => {
               }}
             >
               <Box display="flex">
-                <DescriptionIcon sx={{ width: 13, pb: "2px" }} />
+                <DescriptionIcon
+                  sx={{ width: 13, pb: "2px", color: "#068466" }}
+                />
                 <Typography
                   sx={{
                     ml: 1,
@@ -129,7 +135,9 @@ const OverCardSix = () => {
               }}
             >
               <Box display="flex">
-                <DescriptionIcon sx={{ width: 13, pb: "2px" }} />
+                <DescriptionIcon
+                  sx={{ width: 13, pb: "2px", color: "#068466" }}
+                />
                 <Typography
                   sx={{
                     ml: 1,
@@ -158,7 +166,9 @@ const OverCardSix = () => {
               }}
             >
               <Box display="flex">
-                <DescriptionIcon sx={{ width: 13, pb: "2px" }} />
+                <DescriptionIcon
+                  sx={{ width: 13, pb: "2px", color: "#068466" }}
+                />
                 <Typography
                   sx={{
                     ml: 1,
@@ -187,7 +197,9 @@ const OverCardSix = () => {
               }}
             >
               <Box display="flex">
-                <DescriptionIcon sx={{ width: 13, pb: "2px" }} />
+                <DescriptionIcon
+                  sx={{ width: 13, pb: "2px", color: "#068466" }}
+                />
                 <Typography
                   sx={{
                     ml: 1,
@@ -207,7 +219,7 @@ const OverCardSix = () => {
             </ListItem>
           </List>
         </Grid>
-      </Grid>
+      </Grid>{" "}
     </Box>
   )
 }
