@@ -1,5 +1,6 @@
-import { Box, Typography } from "@mui/material"
+import { Box, List, ListItem, Typography } from "@mui/material"
 import React from "react"
+import DoctorListItem from "./DoctorListItem"
 const OverCardSeven = () => {
   return (
     <Box
@@ -13,8 +14,19 @@ const OverCardSeven = () => {
       <Typography
         sx={{ color: "#00544f", fontSize: "20px", pl: 3, pt: "11px" }}
       >
-        Current doctors
+        Current Doctors
       </Typography>
+      <List>
+        <ListItem>
+          <DoctorListItem />
+        </ListItem>
+        <ListItem>
+          <DoctorListItem />
+        </ListItem>
+        <ListItem>
+          <DoctorListItem />
+        </ListItem>
+      </List>
     </Box>
   )
 }
