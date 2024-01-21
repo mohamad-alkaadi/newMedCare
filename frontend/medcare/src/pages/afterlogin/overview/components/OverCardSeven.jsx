@@ -1,6 +1,14 @@
-import { Box, List, ListItem, Typography } from "@mui/material"
+import {
+  Box,
+  Button,
+  IconButton,
+  List,
+  ListItem,
+  Typography,
+} from "@mui/material"
 import React from "react"
 import DoctorListItem from "./DoctorListItem"
+import AddIcon from "@mui/icons-material/Add"
 const OverCardSeven = () => {
   return (
     <Box
@@ -11,11 +19,26 @@ const OverCardSeven = () => {
         height: 304,
       }}
     >
-      <Typography
-        sx={{ color: "#00544f", fontSize: "20px", pl: 3, pt: "11px" }}
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
       >
-        Current Doctors
-      </Typography>
+        <Typography
+          sx={{ color: "#00544f", fontSize: "20px", ml: 3, mt: "11px" }}
+        >
+          Current Doctors
+        </Typography>
+        <Button
+          size="small"
+          sx={{ textTransform: "none", color: "#068466", mr: 2, mt: "11px" }}
+          startIcon={<AddIcon />}
+        >
+          Add Doctor
+        </Button>
+      </Box>
       <List>
         <ListItem>
           <DoctorListItem />

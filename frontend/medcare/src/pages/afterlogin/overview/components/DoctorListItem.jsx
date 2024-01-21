@@ -6,12 +6,31 @@ const DoctorListItem = () => {
   return (
     <Box>
       <Box
-        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          mt: 1,
+          ml: 1,
+        }}
       >
-        <img className="w-[60px] rounded-[100%]" src={docOne} />
+        <img className="w-[50px] rounded-[100%]" src={docOne} />
         <div className="grid ml-3">
-          <p className="text-[27px]">dr. suzan ahmad</p>
-          <p className="text-[13px]">nural</p>
+          <Typography
+            sx={{
+              fontSize: "23px",
+              color: "#013d39",
+              fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
+            }}
+          >
+            Dr. Suzan ahmad
+          </Typography>
+          <Typography
+            sx={{ color: "#aaaaaa", fontSize: "12px" }}
+            className="text-[13px]"
+          >
+            nural
+          </Typography>
         </div>
       </Box>
     </Box>

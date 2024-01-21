@@ -15,11 +15,11 @@ const OverCardFour = () => {
         sx={{
           pl: 4,
           pt: 2,
-          fontSize: 30,
-          color: "#00514c",
+          color: "#00544f",
+          fontSize: "22px",
         }}
       >
-        Current prescription
+        Current Prescription
       </Typography>
       <List sx={{ pl: 2, pt: 2 }}>
         <ListItem>
