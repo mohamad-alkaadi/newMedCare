@@ -114,6 +114,8 @@ const OverCardThreeSelect = () => {
             variant="contained"
             sx={{
               bgcolor: "#00524d",
+              height: "50px",
+              fontSize: "15px",
               "&:hover": {
                 bgcolor: "#068466",
               },

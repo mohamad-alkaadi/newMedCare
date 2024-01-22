@@ -26,7 +26,7 @@ const OverCardTwo = () => {
       </Box>
       <Box sx={{ display: "flex" }}>
         <Typography sx={{ mr: "36px" }}>Weight:</Typography>
-        <Typography>173</Typography>
+        <Typography>70M</Typography>
       </Box>
       <Box sx={{ display: "flex" }}>
         <Typography sx={{ mr: "27px" }}>allergies:</Typography>
