@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from datetime import date
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 class Doctor(models.Model):
@@ -32,7 +32,7 @@ class Patient(models.Model):
         ("standard", "standard"),
         ("premium", "premium"),
     ]
-
+    username = models.ForeignKey(User, on_delete= models.CASCADE, null=False)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField(default='')
@@ -53,7 +53,7 @@ class Patient(models.Model):
         today = date.today()
         return today.year - self.date_of_birth.year - ((today.month, today.day) < (self.date_of_birth.month, self.date_of_birth.day))
     def __str__(self):
-        return self.first_name
+        return self.first_name + " " + self.last_name
 
 class Documents(models.Model):
     patient = models.ForeignKey(Patient, on_delete= models.CASCADE, null=True)

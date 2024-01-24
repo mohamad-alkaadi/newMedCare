@@ -18,8 +18,8 @@ const AfterLogin = () => {
         </Grid>
         <Grid item xs={14}>
           {/* <Personal activePage={activePage} setActivePage={setActivePage} /> */}
-          <Overview activePage={activePage} setActivePage={setActivePage} />
-          {/* <History activePage={activePage} setActivePage={setActivePage} /> */}
+          {/* <Overview activePage={activePage} setActivePage={setActivePage} /> */}
+          <History activePage={activePage} setActivePage={setActivePage} />
         </Grid>
       </Grid>
     </div>
