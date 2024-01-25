@@ -5,12 +5,12 @@ import SignIn from "./pages/signin/SignIn"
 import { useAppWindowSize } from "./customHooks/useAppWindowSize"
 
 function App() {
+  const [userId, setUserId] = useState(null)
   const size = useAppWindowSize()
-  console.log(size)
   return (
     <>
-      {/* <AfterLogin /> */}
-      <SignIn />
+      {/* <SignIn userId={userId} setUserId={setUserId} /> */}
+      <AfterLogin userId={userId} />
     </>
   )
 }

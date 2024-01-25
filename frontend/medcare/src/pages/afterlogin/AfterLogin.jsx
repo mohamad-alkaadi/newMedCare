@@ -6,7 +6,7 @@ import { Grid } from "@mui/material"
 import Overview from "./overview/Overview"
 import History from "./History/History"
 
-const AfterLogin = () => {
+const AfterLogin = ({ userId }) => {
   const [activePage, setActivePage] = useState("")
 
   return (
@@ -17,8 +17,8 @@ const AfterLogin = () => {
           <PrimaryDrawer activePage={activePage} />
         </Grid>
         <Grid item xs={14}>
-          {/* <Personal activePage={activePage} setActivePage={setActivePage} /> */}
-          <Overview activePage={activePage} setActivePage={setActivePage} />
+          <Personal activePage={activePage} setActivePage={setActivePage} />
+          {/* <Overview activePage={activePage} setActivePage={setActivePage} /> */}
           {/* <History activePage={activePage} setActivePage={setActivePage} /> */}
         </Grid>
       </Grid>
