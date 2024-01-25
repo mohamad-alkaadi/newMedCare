@@ -30,7 +30,6 @@ const PrimaryAppBar = ({ activeBar, setActiveBar }) => {
           <Box sx={{ textDecoration: "none", flexGrow: 1 }}>
             <Typography
               sx={{
-                color: "black",
                 fontSize: 22,
                 color: "#00514c",
               }}

@@ -143,7 +143,6 @@ const CalendarCard = () => {
                             fontWeight: 500,
                             color: "#97a1aa",
                             fontSize: "14px",
-                            color: "#00514c",
                           }}
                         >
                           Dermatologist
