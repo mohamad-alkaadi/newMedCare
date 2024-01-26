@@ -5,18 +5,20 @@ import hello from "../../../assets/temp.jpg"
 import CardTwo from "./components/CardTwo"
 import CardThree from "./components/CardThree"
 import CardFour from "./components/CardFour"
+import PrimaryDrawer from "../components/PrimaryDrawer"
 import CardOne from "./components/CardOne"
 import CardFive from "./components/CardFive"
 import axios from "axios"
 import { UserContext } from "../../../App"
+// import { ActivePageContext } from "../AfterLogin"
 
 const Personal = ({ activePage, setActivePage }) => {
   const [activeBar, setActiveBar] = useState("Personal Details")
   const [info, setInfo] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const user = useContext(UserContext)
+  user.setActivePage("personal")
 
-  setActivePage("personal")
   const fetchData = async () => {
     setIsLoading(true)
     try {
@@ -36,70 +38,79 @@ const Personal = ({ activePage, setActivePage }) => {
   console.log(info)
 
   return (
-    <Box sx={{ backgroundColor: "#f2f5f9", pb: 5 }}>
-      <PrimaryAppBar activeBar={activeBar} setActiveBar={setActiveBar} />
-      <Grid container columns={15} sx={{ pt: 2, p: 2 }}>
-        <Grid
-          sx={{
-            border: "1px solid #e6e6e6",
-            pb: 2,
-            mb: "12px",
-            borderRadius: 2,
-            backgroundColor: "white",
-            boxShadow: "0px 3px 15px rgba(0, 0, 0, 0.2)",
-          }}
-          item
-          xs={3}
-        >
-          <CardOne info={info} />
+    <div>
+      <Grid container columns={16}>
+        <Grid item xs={2}>
+          <PrimaryDrawer activePage={user.activePage} />
         </Grid>
-        <Grid
-          item
-          xs={7}
-          sx={{
-            pr: 2,
-            pl: 2,
-          }}
-        >
-          <CardTwo info={info} />
-        </Grid>
-        <Grid
-          item
-          xs={5}
-          sx={{
-            border: "1px solid #e6e6e6",
-            pb: 2,
-            borderRadius: 2,
-            backgroundColor: "white",
-            boxShadow: "0px 3px 15px rgba(0, 0, 0, 0.2)",
-          }}
-        >
-          <CardThree />
-        </Grid>
-        <Grid
-          item
-          xs={10}
-          sx={{
-            pr: 2,
-            pt: 1,
-          }}
-        >
-          <CardFour info={info} />
-        </Grid>
-        <Grid
-          item
-          xs={5}
-          sx={{
-            backgroundColor: "white",
-            mt: 2,
-            borderRadius: 2,
-            boxShadow: "0px 3px 15px rgba(0, 0, 0, 0.2)",
-          }}
-        >
-          <CardFive />
+        <Grid item xs={14}>
+          <Box sx={{ backgroundColor: "#f2f5f9", pb: 5 }}>
+            <PrimaryAppBar activeBar={activeBar} setActiveBar={setActiveBar} />
+            <Grid container columns={15} sx={{ pt: 2, p: 2 }}>
+              <Grid
+                sx={{
+                  border: "1px solid #e6e6e6",
+                  pb: 2,
+                  mb: "12px",
+                  borderRadius: 2,
+                  backgroundColor: "white",
+                  boxShadow: "0px 3px 15px rgba(0, 0, 0, 0.2)",
+                }}
+                item
+                xs={3}
+              >
+                <CardOne info={info} />
+              </Grid>
+              <Grid
+                item
+                xs={7}
+                sx={{
+                  pr: 2,
+                  pl: 2,
+                }}
+              >
+                <CardTwo info={info} />
+              </Grid>
+              <Grid
+                item
+                xs={5}
+                sx={{
+                  border: "1px solid #e6e6e6",
+                  pb: 2,
+                  borderRadius: 2,
+                  backgroundColor: "white",
+                  boxShadow: "0px 3px 15px rgba(0, 0, 0, 0.2)",
+                }}
+              >
+                <CardThree />
+              </Grid>
+              <Grid
+                item
+                xs={10}
+                sx={{
+                  pr: 2,
+                  pt: 1,
+                }}
+              >
+                <CardFour info={info} />
+              </Grid>
+              <Grid
+                item
+                xs={5}
+                sx={{
+                  backgroundColor: "white",
+                  mt: 2,
+                  borderRadius: 2,
+                  boxShadow: "0px 3px 15px rgba(0, 0, 0, 0.2)",
+                }}
+              >
+                <CardFive />
+              </Grid>
+            </Grid>
+          </Box>
         </Grid>
       </Grid>
-    </Box>
+    </div>
   )
 }
 

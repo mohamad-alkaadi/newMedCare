@@ -30,10 +30,12 @@ import HelpIcon from "@mui/icons-material/Help"
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined"
 import ArrowBackIosOutlinedIcon from "@mui/icons-material/ArrowBackIosOutlined"
 import temp from "../../../assets/temp.jpg"
+import { useNavigate } from "react-router-dom"
 
 const PrimaryDrawer = ({ activePage }) => {
   const [highlight, setHighlight] = useState(false)
   const [anchorEl, setAnchorEl] = React.useState(null)
+  const navigate = useNavigate()
   const open = Boolean(anchorEl)
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget)
@@ -73,7 +75,7 @@ const PrimaryDrawer = ({ activePage }) => {
                 : null
             }
           >
-            <ListItemButton>
+            <ListItemButton onClick={() => navigate("/patient/overview/")}>
               <ListItemIcon
                 sx={activePage === "overview" ? { color: "#fff" } : null}
               >
@@ -94,7 +96,7 @@ const PrimaryDrawer = ({ activePage }) => {
                 : null
             }
           >
-            <ListItemButton>
+            <ListItemButton onClick={() => navigate("/patient/personal/")}>
               <ListItemIcon
                 sx={activePage === "personal" ? { color: "#fff" } : null}
               >
@@ -127,7 +129,7 @@ const PrimaryDrawer = ({ activePage }) => {
                 : null
             }
           >
-            <ListItemButton>
+            <ListItemButton onClick={() => navigate("/patient/history/")}>
               <ListItemIcon
                 sx={activePage === "history" ? { color: "#fff" } : null}
               >
@@ -213,7 +215,7 @@ const PrimaryDrawer = ({ activePage }) => {
             sx={{ ml: 26 }}
           >
             <MenuItem>Edit info</MenuItem>
-            <MenuItem>Logout</MenuItem>
+            <MenuItem onClick={() => navigate("/signin/")}>Logout</MenuItem>
           </Menu>
         </Box>
       </Drawer>

@@ -23,7 +23,7 @@ const SignIn = () => {
       user.setUserId(response.data.patient[0].id)
       if (response.data.detail === "found") {
         setLoginError(false)
-        navigate("/patient/")
+        navigate("/patient/overview/")
       }
     } catch (error) {
       console.error(error)
