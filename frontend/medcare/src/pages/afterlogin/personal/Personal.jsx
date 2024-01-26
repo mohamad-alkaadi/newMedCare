@@ -1,5 +1,5 @@
 import { Avatar, Box, Button, Grid, Typography } from "@mui/material"
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import PrimaryAppBar from "../components/PrimaryAppBar"
 import hello from "../../../assets/temp.jpg"
 import CardTwo from "./components/CardTwo"
@@ -8,16 +8,21 @@ import CardFour from "./components/CardFour"
 import CardOne from "./components/CardOne"
 import CardFive from "./components/CardFive"
 import axios from "axios"
+import { UserContext } from "../../../App"
 
 const Personal = ({ activePage, setActivePage }) => {
   const [activeBar, setActiveBar] = useState("Personal Details")
   const [info, setInfo] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  const user = useContext(UserContext)
+
   setActivePage("personal")
   const fetchData = async () => {
     setIsLoading(true)
     try {
-      const response = await axios.get("http://127.0.0.1:8000/api/patient/1/")
+      const response = await axios.get(
+        `http://127.0.0.1:8000/api/patient/${user.userId}/`
+      )
       setInfo(response.data)
       setIsLoading(false)
     } catch (error) {

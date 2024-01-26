@@ -1,20 +1,62 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import { useAppWindowSize } from "../../customHooks/useAppWindowSize"
 import { Box, Grid, TextField, Typography } from "@mui/material"
 import axios from "axios"
-const SignIn = ({ userId, setUserId }) => {
+import { UserContext } from "../../App"
+import { useNavigate } from "react-router-dom"
+
+const SignIn = () => {
   const [usernameInput, setUsernameInput] = useState("")
   const [passwordInput, setPasswordInput] = useState("")
+  const user = useContext(UserContext)
   const size = useAppWindowSize()
-  const handleSubmit = (event) => {
+  const navigate = useNavigate()
+
+  // const handleSubmit = (event) => {
+  //   event.preventDefault()
+  //   axios
+  //     .post("http://127.0.0.1:8000/login/", {
+  //       username: usernameInput,
+  //       password: passwordInput,
+  //     })
+  //     .then((response) => user.setUserId(response.data.patient[0].id))
+  //     .catch((error) => console.error(error))
+  //   if (response.data.detail === "found") {
+  //     const navigate = useNavigate()
+  //     navigate("/patient/")
+  //   }
+  // }
+
+  // const handleSubmit = (event) => {
+  //   event.preventDefault()
+  //   axios
+  //     .post("http://127.0.0.1:8000/login/", {
+  //       username: usernameInput,
+  //       password: passwordInput,
+  //     })
+  //     .then((response) => {
+  //       user.setUserId(response.data.patient[0].id)
+  //       if (response.data.detail === "found") {
+  //         const navigate = useNavigate()
+  //         navigate("/patient/")
+  //       }
+  //     })
+  //     .catch((error) => console.error(error))
+  // }
+  const handleSubmit = async (event) => {
     event.preventDefault()
-    axios
-      .post("http://127.0.0.1:8000/login/", {
+    try {
+      const response = await axios.post("http://127.0.0.1:8000/login/", {
         username: usernameInput,
         password: passwordInput,
       })
-      .then((response) => setUserId(response.data.patient[0].id))
-      .catch((error) => console.error(error))
+      user.setUserId(response.data.patient[0].id)
+      if (response.data.detail === "found") {
+        navigate("/patient/")
+      }
+    } catch (error) {
+      console.error(error)
+    }
   }
   return (
     <Box

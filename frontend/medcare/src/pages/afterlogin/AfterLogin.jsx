@@ -8,7 +8,7 @@ import History from "./History/History"
 
 const AfterLogin = ({ userId }) => {
   const [activePage, setActivePage] = useState("")
-
+  console.log(userId)
   return (
     <div>
       <Grid container columns={16}>
