@@ -8,41 +8,11 @@ import { useNavigate } from "react-router-dom"
 const SignIn = () => {
   const [usernameInput, setUsernameInput] = useState("")
   const [passwordInput, setPasswordInput] = useState("")
+  const [loginError, setLoginError] = useState(false)
   const user = useContext(UserContext)
   const size = useAppWindowSize()
   const navigate = useNavigate()
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault()
-  //   axios
-  //     .post("http://127.0.0.1:8000/login/", {
-  //       username: usernameInput,
-  //       password: passwordInput,
-  //     })
-  //     .then((response) => user.setUserId(response.data.patient[0].id))
-  //     .catch((error) => console.error(error))
-  //   if (response.data.detail === "found") {
-  //     const navigate = useNavigate()
-  //     navigate("/patient/")
-  //   }
-  // }
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault()
-  //   axios
-  //     .post("http://127.0.0.1:8000/login/", {
-  //       username: usernameInput,
-  //       password: passwordInput,
-  //     })
-  //     .then((response) => {
-  //       user.setUserId(response.data.patient[0].id)
-  //       if (response.data.detail === "found") {
-  //         const navigate = useNavigate()
-  //         navigate("/patient/")
-  //       }
-  //     })
-  //     .catch((error) => console.error(error))
-  // }
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
@@ -52,12 +22,15 @@ const SignIn = () => {
       })
       user.setUserId(response.data.patient[0].id)
       if (response.data.detail === "found") {
+        setLoginError(false)
         navigate("/patient/")
       }
     } catch (error) {
       console.error(error)
+      setLoginError(true)
     }
   }
+  console.log(loginError)
   return (
     <Box
       sx={{
@@ -91,6 +64,11 @@ const SignIn = () => {
           MedCare
         </Typography>
         <form className="w-[100%]" onSubmit={handleSubmit}>
+          {loginError ? (
+            <p className="mb-2 ml-[49px] text-red-600">
+              Unknown username or password. Please try again.
+            </p>
+          ) : null}
           <div className="w-[100%] grid justify-center mb-[1px]">
             <input
               type="text"
