@@ -105,22 +105,6 @@ const PrimaryDrawer = ({ activePage }) => {
               <ListItemText primary="Personal Details" />
             </ListItemButton>
           </ListItem>
-          <ListItem
-            sx={
-              activePage === "messages"
-                ? { bgcolor: "#00544f", color: "#fff" }
-                : null
-            }
-          >
-            <ListItemButton>
-              <ListItemIcon
-                sx={activePage === "messages" ? { color: "#fff" } : null}
-              >
-                {!highlight ? <MessageOutlinedIcon /> : <MessageIcon />}
-              </ListItemIcon>
-              <ListItemText primary="Messages" />
-            </ListItemButton>
-          </ListItem>
 
           <ListItem
             sx={
@@ -140,6 +124,22 @@ const PrimaryDrawer = ({ activePage }) => {
                 )}
               </ListItemIcon>
               <ListItemText primary="Medical History" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem
+            sx={
+              activePage === "chat"
+                ? { bgcolor: "#00544f", color: "#fff" }
+                : null
+            }
+          >
+            <ListItemButton onClick={() => navigate("/patient/chat/")}>
+              <ListItemIcon
+                sx={activePage === "chat" ? { color: "#fff" } : null}
+              >
+                {!highlight ? <MessageOutlinedIcon /> : <MessageIcon />}
+              </ListItemIcon>
+              <ListItemText primary="Chat" />
             </ListItemButton>
           </ListItem>
         </List>

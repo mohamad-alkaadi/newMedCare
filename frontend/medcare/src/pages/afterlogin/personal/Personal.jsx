@@ -23,7 +23,7 @@ const Personal = ({ activePage, setActivePage }) => {
     setIsLoading(true)
     try {
       const response = await axios.get(
-        `http://127.0.0.1:8000/api/patient/${user.userId}/`
+        `http://127.0.0.1:8080/api/patient/${user.userId}/`
       )
       setInfo(response.data)
       setIsLoading(false)

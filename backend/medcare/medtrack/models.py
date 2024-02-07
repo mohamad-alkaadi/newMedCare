@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Doctor(models.Model):
+    user_id = models.ForeignKey(User, on_delete= models.CASCADE, null=False)
     name = models.CharField(max_length=255, null=False)
     specialization = models.CharField(max_length=255, null=False)
     date_joined = models.DateTimeField(default=timezone.now)

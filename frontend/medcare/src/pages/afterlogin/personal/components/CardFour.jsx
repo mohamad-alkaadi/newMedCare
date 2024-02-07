@@ -12,6 +12,7 @@ import { format } from "date-fns"
 import React, { useEffect, useState } from "react"
 import TextSnippetOutlinedIcon from "@mui/icons-material/TextSnippetOutlined"
 import axios from "axios"
+
 const CardFour = ({ info }) => {
   const [buttonOneActive, setButtonOneActive] = useState(true)
   const [appointmentsUpcoming, setAppointmentsUpcoming] = useState("")
@@ -22,10 +23,10 @@ const CardFour = ({ info }) => {
     setIsLoading(true)
     try {
       const responseUpcoming = await axios.get(
-        "http://127.0.0.1:8000/api/appointment/?patient=1&upcoming=True"
+        "http://127.0.0.1:8080/api/appointment/?patient=1&upcoming=True"
       )
       const responsePast = await axios.get(
-        "http://127.0.0.1:8000/api/appointment/?patient=1&upcoming=False"
+        "http://127.0.0.1:8080/api/appointment/?patient=1&upcoming=False"
       )
       setAppointmentsUpcoming(responseUpcoming.data)
       setAppointmentsPast(responsePast.data)

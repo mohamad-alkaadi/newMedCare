@@ -28,10 +28,10 @@ const HistoryDataGrid = () => {
     setIsLoading(true)
     try {
       const checkUp = await axios.get(
-        "http://127.0.0.1:8000/api/appointment/?patient=1&appointment_type=checkup"
+        "http://127.0.0.1:8080/api/appointment/?patient=1&appointment_type=checkup"
       )
       const surgery = await axios.get(
-        "http://127.0.0.1:8000/api/appointment/?patient=1&appointment_type=surgery"
+        "http://127.0.0.1:8080/api/appointment/?patient=1&appointment_type=surgery"
       )
       setIsLoading(false)
 

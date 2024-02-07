@@ -6,6 +6,7 @@ import { useAppWindowSize } from "./customHooks/useAppWindowSize"
 import Overview from "./pages/afterlogin/overview/Overview"
 import Personal from "./pages/afterlogin/personal/Personal"
 import History from "./pages/afterlogin/History/History"
+import Chat from "./pages/afterlogin/chat/Chat"
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -22,6 +23,7 @@ const Router = createBrowserRouter(
       <Route path="/patient/overview/" element={<Overview />} />
       <Route path="/patient/personal/" element={<Personal />} />
       <Route path="/patient/history/" element={<History />} />
+      <Route path="/patient/chat/" element={<Chat />} />
     </Route>
   )
 )
