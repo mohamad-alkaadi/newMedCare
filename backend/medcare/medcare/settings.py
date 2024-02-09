@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'medtrack',
     'meduser',
     'medchat',
-
+    'restchat',
 ]
 
 MIDDLEWARE = [

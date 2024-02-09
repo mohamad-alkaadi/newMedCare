@@ -21,6 +21,7 @@ const SignIn = () => {
         password: passwordInput,
       })
       user.setUserId(response.data.patient[0].id)
+      console.log("respose id", response.data.patient[0].id)
       if (response.data.detail === "found") {
         setLoginError(false)
         navigate("/patient/overview/")

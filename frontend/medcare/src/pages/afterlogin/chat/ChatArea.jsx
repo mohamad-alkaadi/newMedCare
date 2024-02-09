@@ -4,13 +4,18 @@ import Message from "./Message"
 import MessageInput from "./MessageInput"
 import WebSocket from "ws"
 import { UserContext } from "../../../App"
-const messageOne = "hello"
-const messageTwo = "hi"
-const messageThree = "How are you"
-const messageFour = "fine"
-const ChatArea = ({ activeUser, doctorUserId }) => {
+const ChatArea = ({
+  activeUser,
+  doctorUserId,
+  getMessages,
+  messages,
+  setMessages,
+}) => {
   const user = useContext(UserContext)
-
+  console.log("user id", user.userId)
+  useEffect(() => {
+    getMessages()
+  }, [])
   return (
     <>
       {activeUser ? (
@@ -38,10 +43,9 @@ const ChatArea = ({ activeUser, doctorUserId }) => {
               pb: 2,
             }}
           >
-            <Message sent message={messageOne} />
-            <Message received message={messageTwo} />
-            <Message sent message={messageThree} />
-            <Message received message={messageFour} />
+            {messages.map((message) => (
+              <Message sender={message.sender} message={message.message} />
+            ))}
           </Box>
 
           <Box
@@ -53,7 +57,11 @@ const ChatArea = ({ activeUser, doctorUserId }) => {
               borderTop: "1px solid #e6e6e6",
             }}
           >
-            <MessageInput />
+            <MessageInput
+              patientId={user.id}
+              doctorUserId={doctorUserId}
+              getMessages={getMessages}
+            />
           </Box>
         </>
       ) : (

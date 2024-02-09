@@ -11,6 +11,7 @@ const Chat = () => {
   const [doctorUserId, setDoctorUserId] = useState(0)
   const [doctorList, setDoctorList] = useState([])
   const [activeUser, setActiveUser] = useState()
+  const [messages, setMessages] = useState([])
 
   const user = useContext(UserContext)
   user.setActivePage("chat")
@@ -27,6 +28,17 @@ const Chat = () => {
   useEffect(() => {
     fetchData()
   }, [])
+
+  const getMessages = async () => {
+    try {
+      const response = await axios.get(
+        `http://127.0.0.1:8080/chat?doctor=${doctorUserId}&patient=${user.id}`
+      )
+      setMessages(response.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <div>
@@ -51,10 +63,17 @@ const Chat = () => {
                   setDoctorList={setDoctorList}
                   activeUser={activeUser}
                   setActiveUser={setActiveUser}
+                  getMessages={getMessages}
                 />
               </Grid>
               <Grid item xs={12}>
-                <ChatArea activeUser={activeUser} doctorUserId={doctorUserId} />
+                <ChatArea
+                  activeUser={activeUser}
+                  doctorUserId={doctorUserId}
+                  getMessages={getMessages}
+                  messages={messages}
+                  setMessages={setMessages}
+                />
               </Grid>
             </Grid>
           </Box>

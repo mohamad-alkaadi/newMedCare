@@ -1,15 +1,36 @@
 import { IconButton } from "@mui/material"
-import React from "react"
+import React, { useState } from "react"
 import SendIcon from "@mui/icons-material/Send"
-const MessageInput = () => {
+import axios from "axios"
+
+const MessageInput = ({ patientId, doctorUserId, getMessages }) => {
+  const [messageValue, setMessageValue] = useState()
+
+  console.log(patientId)
+  const sendMessages = async () => {
+    try {
+      const response = await axios.post("http://127.0.0.1:8080/chat/", {
+        sender: "patient",
+        message: `${messageValue}`,
+        doctor: `${doctorUserId}`,
+        patient: `${patientId}`,
+      })
+      setMessages(response.data)
+      getMessages()
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <div className="p-3">
       <input
         type="text"
         className="focus:outline-none focus:border-none w-[1280px]"
         placeholder="write a message"
+        value={messageValue}
+        onChange={(e) => setMessageValue(e.target.value)}
       />
-      <IconButton>
+      <IconButton onClick={sendMessages}>
         <SendIcon sx={{ color: "#185e4d" }} />
       </IconButton>
     </div>

@@ -17,6 +17,7 @@ const Personal = ({ activePage, setActivePage }) => {
   const [info, setInfo] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const user = useContext(UserContext)
+  console.log(user)
   user.setActivePage("personal")
 
   const fetchData = async () => {

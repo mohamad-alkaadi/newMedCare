@@ -7,6 +7,7 @@ const ChatUsersList = ({
   doctorList,
   setActiveUser,
   activeUser,
+  getMessages,
 }) => {
   const [activeUserStyle, setActiveUserStyle] = useState(null)
   console.log("style", activeUserStyle)
@@ -33,6 +34,7 @@ const ChatUsersList = ({
               sx={{
                 bgcolor: doctor.doctor.id === 3 ? "#068466" : "#fff",
               }}
+              onClick={() => getMessages}
             >
               <ChatUser
                 userid={doctor.doctor.user_id}

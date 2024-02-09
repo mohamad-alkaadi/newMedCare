@@ -18,3 +18,5 @@ def login(request):
     serializer = UserSerializer(user)
     # return Response({"token": token.key, "user": serializer.data, "patient": patient})
     return Response({"token": token.key, "patient": patient, "detail": "found"})
+
+

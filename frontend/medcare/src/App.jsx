@@ -30,6 +30,9 @@ const Router = createBrowserRouter(
 function App() {
   const [userId, setUserId] = useState(null)
   const [activePage, setActivePage] = useState("")
+  console.log("this is user id", userId)
+  console.log("this is user id", userId)
+  console.log("this is user id", userId)
 
   return (
     <>

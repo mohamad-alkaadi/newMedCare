@@ -9,6 +9,7 @@ const ChatUser = ({
   setActiveUser,
   activeUser,
   activeUserStyle,
+  setActiveUserStyle,
   id,
 }) => {
   console.log(activeUser)
@@ -16,7 +17,7 @@ const ChatUser = ({
     <>
       <Button
         onClick={() => {
-          setDoctorUserId(userid)
+          setDoctorUserId(id)
           setActiveUser(name)
           setActiveUserStyle(name)
         }}
