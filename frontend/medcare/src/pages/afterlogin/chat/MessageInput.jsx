@@ -3,8 +3,8 @@ import React, { useState } from "react"
 import SendIcon from "@mui/icons-material/Send"
 import axios from "axios"
 
-const MessageInput = ({ patientId, doctorUserId, getMessages }) => {
-  const [messageValue, setMessageValue] = useState()
+const MessageInput = ({ patientId, doctorId, getMessages, activeUser }) => {
+  const [messageValue, setMessageValue] = useState("")
 
   console.log(patientId)
   const sendMessages = async () => {
@@ -12,10 +12,10 @@ const MessageInput = ({ patientId, doctorUserId, getMessages }) => {
       const response = await axios.post("http://127.0.0.1:8080/chat/", {
         sender: "patient",
         message: `${messageValue}`,
-        doctor: `${doctorUserId}`,
-        patient: `${patientId}`,
+        doctor: `${doctorId}`,
+        patient: `${activeUser}`,
       })
-      setMessages(response.data)
+      setMessageValue(response.data)
       getMessages()
     } catch (error) {
       console.log(error)

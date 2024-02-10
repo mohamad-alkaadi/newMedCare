@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom"
 const SignIn = () => {
   const [usernameInput, setUsernameInput] = useState("")
   const [passwordInput, setPasswordInput] = useState("")
-  const [loginError, setLoginError] = useState(false)
+  const [loginError, setLoginError] = useState(null)
   const user = useContext(UserContext)
   const size = useAppWindowSize()
   const navigate = useNavigate()

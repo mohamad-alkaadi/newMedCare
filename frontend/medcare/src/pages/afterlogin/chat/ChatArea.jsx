@@ -18,7 +18,7 @@ const ChatArea = ({
   }, [])
   return (
     <>
-      {activeUser ? (
+      {user.doctorName ? (
         <>
           <Box
             sx={{
@@ -30,7 +30,7 @@ const ChatArea = ({
               color: "#00514c",
             }}
           >
-            Dr. {activeUser}
+            Dr. {user.doctorName}
           </Box>
 
           <Box
@@ -59,8 +59,9 @@ const ChatArea = ({
           >
             <MessageInput
               patientId={user.id}
-              doctorUserId={doctorUserId}
+              doctorId={user.doctorId}
               getMessages={getMessages}
+              activeUser={user.userId}
             />
           </Box>
         </>

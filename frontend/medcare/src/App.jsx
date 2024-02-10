@@ -28,16 +28,31 @@ const Router = createBrowserRouter(
   )
 )
 function App() {
-  const [userId, setUserId] = useState(null)
+  const [userId, setUserId] = useState(0)
   const [activePage, setActivePage] = useState("")
+  const [doctorId, setDoctorId] = useState(0)
+  const [doctorName, setDoctorName] = useState("")
   console.log("this is user id", userId)
   console.log("this is user id", userId)
   console.log("this is user id", userId)
+  console.log("this is doctor id", doctorId)
+  console.log("this is doctor id", doctorId)
+  console.log("this is doctor name", doctorName)
+  console.log("this is doctor name", doctorName)
 
   return (
     <>
       <UserContext.Provider
-        value={{ userId, setUserId, activePage, setActivePage }}
+        value={{
+          userId,
+          setUserId,
+          activePage,
+          setActivePage,
+          doctorId,
+          setDoctorId,
+          doctorName,
+          setDoctorName,
+        }}
       >
         <RouterProvider router={Router} />
       </UserContext.Provider>

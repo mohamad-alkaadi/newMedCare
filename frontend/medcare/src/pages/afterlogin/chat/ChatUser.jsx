@@ -1,5 +1,6 @@
 import { Avatar, Box, Button, Typography } from "@mui/material"
-import React from "react"
+import React, { useContext } from "react"
+import { UserContext } from "../../../App"
 
 const ChatUser = ({
   userid,
@@ -13,13 +14,17 @@ const ChatUser = ({
   id,
 }) => {
   console.log(activeUser)
+  const user = useContext(UserContext)
+
   return (
     <>
       <Button
         onClick={() => {
           setDoctorUserId(id)
-          setActiveUser(name)
+          // setActiveUser(name)
           setActiveUserStyle(name)
+          user.setDoctorId(id)
+          user.setDoctorName(name)
         }}
       >
         <Box sx={{ display: "flex" }}>

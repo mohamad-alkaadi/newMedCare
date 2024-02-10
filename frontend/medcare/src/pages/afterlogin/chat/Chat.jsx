@@ -10,7 +10,7 @@ const Chat = () => {
   const [activeBar, setActiveBar] = useState("Chat")
   const [doctorUserId, setDoctorUserId] = useState(0)
   const [doctorList, setDoctorList] = useState([])
-  const [activeUser, setActiveUser] = useState()
+  // const [activeUser, setActiveUser] = useState()
   const [messages, setMessages] = useState([])
 
   const user = useContext(UserContext)
@@ -32,7 +32,7 @@ const Chat = () => {
   const getMessages = async () => {
     try {
       const response = await axios.get(
-        `http://127.0.0.1:8080/chat?doctor=${doctorUserId}&patient=${user.id}`
+        `http://127.0.0.1:8080/chat?doctor=${user.doctorId}&patient=${user.userId}`
       )
       setMessages(response.data)
     } catch (error) {
@@ -61,14 +61,14 @@ const Chat = () => {
                   setDoctorUserId={setDoctorUserId}
                   doctorList={doctorList}
                   setDoctorList={setDoctorList}
-                  activeUser={activeUser}
-                  setActiveUser={setActiveUser}
+                  activeUser={user.userId}
+                  // setActiveUser={setActiveUser}
                   getMessages={getMessages}
                 />
               </Grid>
               <Grid item xs={12}>
                 <ChatArea
-                  activeUser={activeUser}
+                  activeUser={user.userId}
                   doctorUserId={doctorUserId}
                   getMessages={getMessages}
                   messages={messages}
