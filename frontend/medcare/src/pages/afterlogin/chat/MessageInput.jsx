@@ -17,6 +17,7 @@ const MessageInput = ({ patientId, doctorId, getMessages, activeUser }) => {
       })
       setMessageValue(response.data)
       getMessages()
+      setMessageValue("")
     } catch (error) {
       console.log(error)
     }

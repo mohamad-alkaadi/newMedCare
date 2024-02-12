@@ -5,7 +5,7 @@ import axios from "axios"
 const ChatUsersList = ({
   setDoctorUserId,
   doctorList,
-  setActiveUser,
+  // setActiveUser,
   activeUser,
   getMessages,
 }) => {
@@ -34,18 +34,19 @@ const ChatUsersList = ({
               sx={{
                 bgcolor: doctor.doctor.id === 3 ? "#068466" : "#fff",
               }}
-              onClick={() => getMessages}
+              // onClick={() => getMessages}
             >
               <ChatUser
                 userid={doctor.doctor.user_id}
                 name={doctor.doctor.name}
                 specialization={doctor.doctor.specialization}
                 setDoctorUserId={setDoctorUserId}
-                setActiveUser={setActiveUser}
+                // setActiveUser={setActiveUser}
                 activeUser={activeUser}
                 setActiveUserStyle={setActiveUserStyle}
                 activeUserStyle={activeUserStyle}
                 id={doctor.doctor.id}
+                getMessages={getMessages}
               />
             </ListItem>
           ))}

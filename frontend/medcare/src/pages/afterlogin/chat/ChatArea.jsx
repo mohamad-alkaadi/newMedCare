@@ -13,9 +13,9 @@ const ChatArea = ({
 }) => {
   const user = useContext(UserContext)
   console.log("user id", user.userId)
-  useEffect(() => {
-    getMessages()
-  }, [])
+  // useEffect(() => {
+  //   getMessages()
+  // }, [])
   return (
     <>
       {user.doctorName ? (

@@ -25,6 +25,7 @@ const ChatUser = ({
           setActiveUserStyle(name)
           user.setDoctorId(id)
           user.setDoctorName(name)
+          getMessages()
         }}
       >
         <Box sx={{ display: "flex" }}>
