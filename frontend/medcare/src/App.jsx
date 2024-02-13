@@ -13,6 +13,8 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom"
+import DoctorSignin from "./pages/doctorsignin/DoctorSignin"
+import DoctorChat from "./pages/afterlogin/doctorchat/DoctorChat"
 
 export const UserContext = createContext()
 
@@ -24,6 +26,8 @@ const Router = createBrowserRouter(
       <Route path="/patient/personal/" element={<Personal />} />
       <Route path="/patient/history/" element={<History />} />
       <Route path="/patient/chat/" element={<Chat />} />
+      <Route path="/doctor/signin/" element={<DoctorSignin />} />
+      <Route path="/doctor/chat/" element={<DoctorChat />} />
     </Route>
   )
 )
@@ -56,6 +60,7 @@ function App() {
       >
         <RouterProvider router={Router} />
       </UserContext.Provider>
+      {/* <DoctorSignin /> */}
     </>
   )
 }

@@ -1,5 +1,5 @@
 import { IconButton } from "@mui/material"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import SendIcon from "@mui/icons-material/Send"
 import axios from "axios"
 
@@ -22,6 +22,11 @@ const MessageInput = ({ patientId, doctorId, getMessages, activeUser }) => {
       console.log(error)
     }
   }
+  // useEffect(() => {
+  //   document.addEventListener("click", () => {
+  //     getMessages()
+  //   })
+  // }, [])
   return (
     <div className="p-3">
       <input

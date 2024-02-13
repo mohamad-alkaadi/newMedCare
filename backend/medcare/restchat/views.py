@@ -14,6 +14,7 @@ class MessageViewSet(viewsets.ModelViewSet):
         doctor = self.request.query_params.get("doctor")
         sender = self.request.query_params.get("sender")
         message = self.request.query_params.get("message")
+        patient_list = self.request.query_params.get("patient_list")
         if patient:
             queryset = queryset.filter(patient=patient)
         if doctor:
@@ -22,5 +23,7 @@ class MessageViewSet(viewsets.ModelViewSet):
             queryset = queryset.filter(sender=sender)
         if message:
             queryset = queryset.filter(message=message)
+        if patient_list:
+            queryset = queryset.values_list("patient", flat=True).distinct()
 
         return queryset
