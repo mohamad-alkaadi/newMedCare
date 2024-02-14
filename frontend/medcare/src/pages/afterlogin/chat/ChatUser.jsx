@@ -13,10 +13,17 @@ const ChatUser = ({
   setActiveUserStyle,
   id,
   getMessages,
+  setStyle,
+  index,
 }) => {
   console.log(activeUser)
   const user = useContext(UserContext)
-
+  const isActiveUser = activeUserStyle === name
+  // if (activeUserStyle === name) {
+  //   setStyle(true)
+  // } else {
+  //   setStyle(false)
+  // }
   return (
     <>
       <Button
@@ -28,6 +35,15 @@ const ChatUser = ({
           user.setDoctorName(name)
           getMessages()
         }}
+        sx={{
+          bgcolor: isActiveUser ? "#068466" : "#fff",
+          width: "100%",
+          display: "flex",
+          justifyContent: "start",
+          "&:hover": {
+            bgcolor: isActiveUser ? "#068466" : "#08a580",
+          },
+        }}
       >
         <Box sx={{ display: "flex" }}>
           <Avatar sx={{ width: 48, height: 48 }}></Avatar>
@@ -35,7 +51,7 @@ const ChatUser = ({
             <Typography
               sx={{
                 fontSize: "15px",
-                color: id === 3 ? "#fff" : "black",
+                color: isActiveUser ? "#fff" : "#00514c",
               }}
             >
               Dr. {name}
@@ -46,7 +62,9 @@ const ChatUser = ({
                 fontSize: "10px",
                 ml: "1px",
                 textTransform: "none",
-                color: id === 3 ? "#fff" : "black",
+                color: isActiveUser ? "#fff" : "#00514c",
+
+                // color: id === 3 ? "#fff" : "black",
               }}
             >
               {specialization}

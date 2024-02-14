@@ -22,11 +22,7 @@ const MessageInput = ({ patientId, doctorId, getMessages, activeUser }) => {
       console.log(error)
     }
   }
-  // useEffect(() => {
-  //   document.addEventListener("click", () => {
-  //     getMessages()
-  //   })
-  // }, [])
+
   return (
     <div className="p-3">
       <input
