@@ -1,7 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material"
 import React from "react"
 
-const OverCardTwo = () => {
+const OverCardTwo = ({ blood, height, weight, allergies }) => {
   return (
     <Box
       sx={{
@@ -18,19 +18,19 @@ const OverCardTwo = () => {
     >
       <Box sx={{ display: "flex" }}>
         <Typography sx={{ mr: "12px" }}>Blood type:</Typography>
-        <Typography>A-</Typography>
+        <Typography>{blood}</Typography>
       </Box>
       <Box sx={{ display: "flex" }}>
         <Typography sx={{ mr: "39px" }}>Height:</Typography>
-        <Typography>173</Typography>
+        <Typography>{height} cm</Typography>
       </Box>
       <Box sx={{ display: "flex" }}>
         <Typography sx={{ mr: "36px" }}>Weight:</Typography>
-        <Typography>70M</Typography>
+        <Typography>{weight} kg</Typography>
       </Box>
       <Box sx={{ display: "flex" }}>
         <Typography sx={{ mr: "27px" }}>allergies:</Typography>
-        <Typography>peanuts, milk</Typography>
+        <Typography>{allergies}</Typography>
       </Box>
     </Box>
   )

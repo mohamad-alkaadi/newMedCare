@@ -1,8 +1,13 @@
 import { Avatar, Box, Grid, Typography } from "@mui/material"
 import React from "react"
 import pic from "../../../../assets/temp.jpg"
-
-const OverCardOne = () => {
+function capitalizeFirstLetter(str) {
+  if (str === undefined) {
+    return ""
+  }
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+const OverCardOne = ({ first_name, last_name, dob, phone, email, plan }) => {
   return (
     <Grid
       container
@@ -51,7 +56,7 @@ const OverCardOne = () => {
                 color: "#013d39",
               }}
             >
-              Mohamad Alkaadi
+              {first_name} {last_name}
             </Typography>
           </Grid>
 
@@ -76,7 +81,7 @@ const OverCardOne = () => {
                     fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
                   }}
                 >
-                  30 Apr 1993 (25yo)
+                  {dob}
                 </Typography>
               </Box>
               <Box sx={{ display: "flex" }}>
@@ -99,7 +104,7 @@ const OverCardOne = () => {
                     fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
                   }}
                 >
-                  mohamadalkaadi@gmail.com
+                  {email}
                 </Typography>
               </Box>
             </Box>
@@ -125,7 +130,7 @@ const OverCardOne = () => {
                     fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
                   }}
                 >
-                  0912345677
+                  {phone}
                 </Typography>
               </Box>
               <Box sx={{ display: "flex" }}>
@@ -148,7 +153,7 @@ const OverCardOne = () => {
                     fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
                   }}
                 >
-                  Basic
+                  {capitalizeFirstLetter(plan)}
                 </Typography>
               </Box>
             </Box>
