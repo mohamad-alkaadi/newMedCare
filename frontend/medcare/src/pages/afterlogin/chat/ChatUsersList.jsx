@@ -47,7 +47,7 @@ const ChatUsersList = ({
               }} */}
           {doctorList.map((doctor, index) => (
             <ListItem
-              key={doctor.doctor.id}
+              key={doctor.id}
               sx={
                 {
                   // bgcolor: "red",
@@ -56,15 +56,15 @@ const ChatUsersList = ({
               }
             >
               <ChatUser
-                userid={doctor.doctor.user_id}
-                name={doctor.doctor.name}
-                specialization={doctor.doctor.specialization}
+                userid={doctor.user_id}
+                name={doctor.name}
+                specialization={doctor.specialization}
                 setDoctorUserId={setDoctorUserId}
                 // setActiveUser={setActiveUser}
                 activeUser={activeUser}
                 setActiveUserStyle={setActiveUserStyle}
                 activeUserStyle={activeUserStyle}
-                id={doctor.doctor.id}
+                id={doctor.id}
                 getMessages={getMessages}
                 setStyle={setStyle}
                 index={index + 1}

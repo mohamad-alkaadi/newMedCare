@@ -1,19 +1,23 @@
 from rest_framework import serializers
-from .models import Appointment, Doctor, Patient, Documents
+from .models import Appointment, Doctor, Patient, Medication, Files
 
 class PatientSerializer(serializers.ModelSerializer):
     class Meta:
         model = Patient
         fields = "__all__"
 
-class DocumentSerializer(serializers.ModelSerializer):
+class FileSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Documents
+        model = Files
         fields = "__all__"
 
 class DoctorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Doctor
+        fields= '__all__'
+class MedicationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Medication
         fields= '__all__'
 
 class AppointmentSerializer(serializers.ModelSerializer):

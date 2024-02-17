@@ -57,10 +57,11 @@ class Patient(models.Model):
     def __str__(self):
         return self.first_name + " " + self.last_name
 
-class Documents(models.Model):
+class Files(models.Model):
     patient = models.ForeignKey(Patient, on_delete= models.CASCADE, null=True)
     doctor = models.ForeignKey(Doctor, on_delete= models.CASCADE, null=True)
-    pdf_file = models.FileField(upload_to = 'pdfs/')
+    uploaded_on = models.DateField(auto_now_add=True)
+    pdf_file = models.FileField(upload_to = 'files/')
     def __str__(self):
         return self.name
 
@@ -74,7 +75,6 @@ class Appointment(models.Model):
     reason = models.CharField(max_length=255, null=False)
     doctor = models.ForeignKey(Doctor, on_delete= models.SET('deleted doctor'))
     description = models.TextField()
-    medicine_prescribed= models.TextField()
     date = models.DateField(default=timezone.now)
     time = models.TimeField(default=timezone.now)
     need_surgery = models.BooleanField()
@@ -88,4 +88,16 @@ class Appointment(models.Model):
         if self.appointment_type == 'surgery':
             self.need_surgery = False
         super().save(*args, **kwargs)
+
+
+class Medication(models.Model):
+    appointment = models.ForeignKey(Appointment, on_delete = models.PROTECT)
+    patient = models.ForeignKey(Patient, on_delete= models.CASCADE)
+    start_on = models.DateField(default=timezone.now)
+    end_on = models.DateField(default=timezone.now)
+    medicine_prescribed = models.CharField(max_length=100,null=False)
+    how_many= models.IntegerField()
+    time_between = models.FloatField()
+    def __str__(self):
+        return self.medicine_prescribed
 

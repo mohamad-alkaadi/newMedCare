@@ -42,7 +42,7 @@ const HistoryDataGrid = () => {
         reason: item.reason,
         description: item.description,
         date: item.date,
-        medicine: item.medicine_prescribed,
+        medicine: "no medicine",
         notes: item.notes,
       }))
 
@@ -53,7 +53,7 @@ const HistoryDataGrid = () => {
         reason: item.reason,
         description: item.description,
         date: item.date,
-        medicine: item.medicine_prescribed,
+        medicine: "no medicine",
         notes: item.notes,
       }))
 

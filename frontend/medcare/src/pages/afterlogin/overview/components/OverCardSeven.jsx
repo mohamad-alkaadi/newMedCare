@@ -6,10 +6,26 @@ import {
   ListItem,
   Typography,
 } from "@mui/material"
-import React from "react"
+import React, { useEffect, useState } from "react"
 import DoctorListItem from "./DoctorListItem"
 import AddIcon from "@mui/icons-material/Add"
+import axios from "axios"
 const OverCardSeven = () => {
+  const [doctorList, setDoctorList] = useState([])
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("http://127.0.0.1:8080/api/doctor_list/")
+      setDoctorList(response.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+
   return (
     <Box
       sx={{
@@ -39,17 +55,18 @@ const OverCardSeven = () => {
           Add Doctor
         </Button>
       </Box>
-      <List>
-        <ListItem>
-          <DoctorListItem />
-        </ListItem>
-        <ListItem>
-          <DoctorListItem />
-        </ListItem>
-        <ListItem>
-          <DoctorListItem />
-        </ListItem>
-      </List>
+      <Box sx={{ overflow: "auto", height: "240px" }}>
+        <List>
+          {doctorList.map((data) => (
+            <ListItem>
+              <DoctorListItem
+                name={data.name}
+                specialization={data.specialization}
+              />
+            </ListItem>
+          ))}
+        </List>
+      </Box>
     </Box>
   )
 }

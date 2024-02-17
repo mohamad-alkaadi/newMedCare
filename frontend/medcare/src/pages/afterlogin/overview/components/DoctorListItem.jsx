@@ -2,7 +2,7 @@ import { Box, Grid, Typography } from "@mui/material"
 import React from "react"
 import docOne from "../../../../assets/docOne.png"
 import docTwo from "../../../../assets/docOne.png"
-const DoctorListItem = () => {
+const DoctorListItem = ({ name, specialization }) => {
   return (
     <Box>
       <Box
@@ -23,13 +23,13 @@ const DoctorListItem = () => {
               fontFamily: "'Noto Sans Indic Siyaq Numbers', sans-serif",
             }}
           >
-            Dr. Suzan ahmad
+            Dr. {name}
           </Typography>
           <Typography
             sx={{ color: "#aaaaaa", fontSize: "12px" }}
             className="text-[13px]"
           >
-            nural
+            {specialization}
           </Typography>
         </div>
       </Box>

@@ -1,7 +1,7 @@
 import React from "react"
 
 const DoctorChatUsersList = () => {
-  return <div>DoctorChatUsersList</div>
+  return <div></div>
 }
 
 export default DoctorChatUsersList
